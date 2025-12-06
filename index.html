@@ -7,6 +7,134 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<style>
+		/* Base styles */
+		body {
+			font-family: Helvetica, Arial, sans-serif;
+			margin: 0;
+			padding: 15px;
+			line-height: 1.5;
+		}
+
+		/* Main container - responsive */
+		.main-container {
+			max-width: 980px;
+			margin: 0 auto;
+			width: 100%;
+		}
+
+		/* Header section with photo */
+		.header-section {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 20px;
+			align-items: flex-start;
+		}
+
+		.header-info {
+			flex: 1;
+			min-width: 280px;
+		}
+
+		.header-photo {
+			flex: 1;
+			min-width: 280px;
+			text-align: center;
+		}
+
+		.header-photo img {
+			max-width: 100%;
+			height: auto;
+		}
+
+		/* Name styling */
+		.name {
+			font-size: 2.5em;
+			font-weight: bold;
+			margin-bottom: 10px;
+		}
+
+		/* Publication entries */
+		.pub-entry {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 15px;
+			margin-bottom: 25px;
+			padding-bottom: 15px;
+			border-bottom: 1px solid #eee;
+		}
+
+		.pub-media {
+			flex: 0 0 250px;
+			max-width: 100%;
+		}
+
+		.pub-details {
+			flex: 1;
+			min-width: 250px;
+		}
+
+		/* Responsive iframes (YouTube videos) */
+		.video-container {
+			position: relative;
+			width: 100%;
+			max-width: 250px;
+			padding-bottom: 56.25%; /* 16:9 aspect ratio */
+			height: 0;
+			overflow: hidden;
+		}
+
+		.video-container iframe {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+
+		/* Responsive images in publications */
+		.pub-media img {
+			max-width: 100%;
+			height: auto;
+		}
+
+		/* Links list */
+		.links-list {
+			padding-left: 20px;
+		}
+
+		.links-list li {
+			margin-bottom: 5px;
+		}
+
+		/* Section headers */
+		h2 {
+			border-bottom: 2px solid #333;
+			padding-bottom: 5px;
+			margin-top: 30px;
+		}
+
+		/* Horizontal rule */
+		hr {
+			border: none;
+			border-top: 2px solid #333;
+			margin: 20px 0;
+		}
+
+		/* Legacy table support - make responsive */
+		table {
+			max-width: 100%;
+		}
+
+		table img {
+			max-width: 100%;
+			height: auto;
+		}
+
+		table iframe {
+			max-width: 100%;
+		}
+
+		/* Collapsible sections */
 		.collapsible {
 			background-color: rgb(211, 211, 211);
 			color: rgb(0, 0, 0);
@@ -31,57 +159,111 @@
 			transition: max-height 0.2s ease-out;
 			background-color: #ffffff;
 		}
+
+		/* Mobile styles */
+		@media screen and (max-width: 768px) {
+			body {
+				padding: 10px;
+			}
+
+			.name {
+				font-size: 1.8em;
+			}
+
+			.header-section {
+				flex-direction: column-reverse;
+			}
+
+			.header-photo {
+				text-align: center;
+				margin-bottom: 15px;
+			}
+
+			.header-photo img {
+				max-width: 300px;
+			}
+
+			.pub-entry {
+				flex-direction: column;
+			}
+
+			.pub-media {
+				flex: 0 0 auto;
+				text-align: center;
+			}
+
+			.video-container {
+				max-width: 100%;
+				margin: 0 auto;
+			}
+
+			/* Make legacy tables stack on mobile */
+			table, tbody, tr, td {
+				display: block;
+				width: 100% !important;
+			}
+
+			td[width="256"],
+			td[width="50%"] {
+				width: 100% !important;
+				text-align: center;
+				margin-bottom: 15px;
+			}
+
+			td img {
+				max-width: 280px !important;
+			}
+
+			iframe {
+				max-width: 100% !important;
+			}
+		}
+
+		/* Small mobile */
+		@media screen and (max-width: 480px) {
+			.name {
+				font-size: 1.5em;
+			}
+
+			.header-photo img {
+				max-width: 250px;
+			}
+
+			td img {
+				max-width: 100% !important;
+			}
+		}
 	</style>
 </head>
 
 <body bgcolor="#FFFFFF" link="#000000" vlink="#000000" alink="#000000">
 
-	<table border="0" width="980px" align="center">
-		<tbody>
-			<tr>
-				<td>
-
-				</td>
-				<td valign="top">
-					<br>
-					<table style="font-size: 11pt;" border="0" width="100%">
-						<tbody>
-							<tr>
-
-								<td>
-									<font face="helvetica , ariel, &#39;sans serif&#39;" size="6">
-										<b>Nicholas J. Bryan</b><br><br>
-									</font>
-									<font face="helvetica , ariel, &#39;sans serif&#39;" size="4">
-										Senior Research Scientist<br>
-										<a
-											href="https://research.adobe.com/news/new-horizons-for-audio-research-at-adobe/">Head of Music AI</a>, <a href="https://research.adobe.com/">Adobe
-											Research</a><br>
-										San Francisco, CA<br><br>
-										email: njb at ieee dot org<br>
-
-										<ul>
-											<li><a href="cv.pdf" border="0">CV</a></li>
-											<li><a href="https://scholar.google.com/citations?user=65zgjxQAAAAJ&hl=en"
-													border="0">Google Scholar</a></li>
-											<li><a href="https://twitter.com/NicholasJBryan" border="0">Twitter</a></li>
-											<li><a href="https://orcid.org/0000-0003-1469-7278" border="0">Orchid ID</a>
-											</li>
-											<li><a href="https://research.adobe.com/person/nicholas-j-bryan"
-													border="0">Official Adobe Page</a></li>
-											<li><a href="https://www.linkedin.com/pub/nick-bryan/22/170/940"
-													border="0">LinkedIn</a></li>
-											<li><a href="https://github.com/njb" border="0">GitHub</a></li>
-											<li><a href="http://isse.sourceforge.net/" border="0">Sourceforge</a></li>
-										</ul>
-									</font>
-								</td>
-								<td width="50%">
-									<img width="500" src="index_files/head-shot.jpg" border="0">
-								</td>
-							</tr>
-						</tbody>
-					</table>
+	<div class="main-container">
+		<div class="header-section">
+			<div class="header-info">
+				<div class="name">Nicholas J. Bryan</div>
+				<p>
+					Senior Research Scientist<br>
+					<a href="https://research.adobe.com/news/new-horizons-for-audio-research-at-adobe/">Head of Music AI</a>, 
+					<a href="https://research.adobe.com/">Adobe Research</a><br>
+					San Francisco, CA<br><br>
+					email: njb at ieee dot org
+				</p>
+				<ul class="links-list">
+					<li><a href="cv.pdf">CV</a></li>
+					<li><a href="https://scholar.google.com/citations?user=65zgjxQAAAAJ&hl=en">Google Scholar</a></li>
+					<li><a href="https://twitter.com/NicholasJBryan">Twitter</a></li>
+					<li><a href="https://orcid.org/0000-0003-1469-7278">ORCID</a></li>
+					<li><a href="https://research.adobe.com/person/nicholas-j-bryan">Official Adobe Page</a></li>
+					<li><a href="https://www.linkedin.com/pub/nick-bryan/22/170/940">LinkedIn</a></li>
+					<li><a href="https://github.com/njb">GitHub</a></li>
+					<li><a href="http://isse.sourceforge.net/">Sourceforge</a></li>
+				</ul>
+			</div>
+			<div class="header-photo">
+				<img src="index_files/head-shot.jpg" alt="Nicholas J. Bryan">
+			</div>
+		</div>
 					<p>
 					</p>
 					<hr size="2" align="left" noshade="">
@@ -1275,6 +1457,8 @@
 
 
 					<br><br><br><br>
+
+	</div> <!-- end main-container -->
 
 </body>
 
