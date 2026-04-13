@@ -1,13 +1,1572 @@
-<!DOCTYPE html>  
-<html>  
-  
-<head>  
-    <title>HTML Redirect</title>  
-    <meta http-equiv="refresh"
-        content="1; url = http://ccrma.stanford.edu/~njb" />  
-</head>  
-  
-<body>  
-</body>  
-  
-</html> 
+<html>
+
+<head>
+	<title>Nicholas (Nick) J. Bryan</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<style>
+		/* Base styles */
+		body {
+			font-family: Helvetica, Arial, sans-serif;
+			margin: 0;
+			padding: 15px;
+			line-height: 1.5;
+		}
+
+		/* Main container - responsive */
+		.main-container {
+			max-width: 980px;
+			margin: 0 auto;
+			width: 100%;
+		}
+
+		/* Header section with photo */
+		.header-section {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 20px;
+			align-items: flex-start;
+		}
+
+		.header-info {
+			flex: 1;
+			min-width: 280px;
+		}
+
+		.header-photo {
+			flex: 1;
+			min-width: 280px;
+			text-align: center;
+		}
+
+		.header-photo img {
+			max-width: 100%;
+			height: auto;
+		}
+
+		/* Name styling */
+		.name {
+			font-size: 2.5em;
+			font-weight: bold;
+			margin-bottom: 10px;
+		}
+
+		/* Publication entries */
+		.pub-entry {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 15px;
+			margin-bottom: 25px;
+			padding-bottom: 15px;
+			border-bottom: 1px solid #eee;
+		}
+
+		.pub-media {
+			flex: 0 0 250px;
+			max-width: 100%;
+		}
+
+		.pub-details {
+			flex: 1;
+			min-width: 250px;
+		}
+
+		/* Responsive iframes (YouTube videos) */
+		.video-container {
+			position: relative;
+			width: 100%;
+			max-width: 250px;
+			padding-bottom: 56.25%; /* 16:9 aspect ratio */
+			height: 0;
+			overflow: hidden;
+		}
+
+		.video-container iframe {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+
+		/* Responsive images in publications */
+		.pub-media img {
+			max-width: 100%;
+			height: auto;
+		}
+
+		/* Links list */
+		.links-list {
+			padding-left: 20px;
+		}
+
+		.links-list li {
+			margin-bottom: 5px;
+		}
+
+		/* Section headers */
+		h2 {
+			border-bottom: 2px solid #333;
+			padding-bottom: 5px;
+			margin-top: 30px;
+		}
+
+		/* Horizontal rule */
+		hr {
+			border: none;
+			border-top: 2px solid #333;
+			margin: 20px 0;
+		}
+
+		/* Legacy table support - make responsive */
+		table {
+			max-width: 100%;
+		}
+
+		table img {
+			max-width: 100%;
+			height: auto;
+		}
+
+		table iframe {
+			max-width: 100%;
+		}
+
+		/* Collapsible sections */
+		.collapsible {
+			background-color: rgb(211, 211, 211);
+			color: rgb(0, 0, 0);
+			cursor: pointer;
+			padding: 8px;
+			width: 10%;
+			border: none;
+			text-align: left;
+			outline: none;
+			font-size: 15px;
+		}
+
+		.active,
+		.collapsible:hover {
+			background-color: rgb(255, 255, 255);
+		}
+
+		.content {
+			padding: 0 8px;
+			max-height: 0;
+			overflow: hidden;
+			transition: max-height 0.2s ease-out;
+			background-color: #ffffff;
+		}
+
+		/* Mobile styles */
+		@media screen and (max-width: 768px) {
+			body {
+				padding: 10px;
+			}
+
+			.name {
+				font-size: 1.8em;
+			}
+
+			.header-section {
+				flex-direction: column-reverse;
+			}
+
+			.header-photo {
+				text-align: center;
+				margin-bottom: 15px;
+			}
+
+			.header-photo img {
+				max-width: 300px;
+			}
+
+			.pub-entry {
+				flex-direction: column;
+			}
+
+			.pub-media {
+				flex: 0 0 auto;
+				text-align: center;
+			}
+
+			.video-container {
+				max-width: 100%;
+				margin: 0 auto;
+			}
+
+			/* Make legacy tables stack on mobile */
+			table, tbody, tr, td {
+				display: block;
+				width: 100% !important;
+			}
+
+			td[width="256"],
+			td[width="50%"] {
+				width: 100% !important;
+				text-align: center;
+				margin-bottom: 15px;
+			}
+
+			td img {
+				max-width: 280px !important;
+			}
+
+			iframe {
+				max-width: 100% !important;
+			}
+		}
+
+		/* Small mobile */
+		@media screen and (max-width: 480px) {
+			.name {
+				font-size: 1.5em;
+			}
+
+			.header-photo img {
+				max-width: 250px;
+			}
+
+			td img {
+				max-width: 100% !important;
+			}
+		}
+	</style>
+</head>
+
+<body bgcolor="#FFFFFF" link="#000000" vlink="#000000" alink="#000000">
+
+	<div class="main-container">
+		<div class="header-section">
+			<div class="header-info">
+				<div class="name">Nicholas J. Bryan</div>
+				<p>
+					Head of Music AI<br> 
+					<a href="https://research.adobe.com/">Adobe Research</a><br>
+					San Francisco, CA<br><br>
+					email: njb at ieee dot org
+				</p>
+				<ul class="links-list">
+					<li><a href="cv.pdf">CV</a></li>
+					<li><a href="https://scholar.google.com/citations?user=65zgjxQAAAAJ&hl=en">Google Scholar</a></li>
+					<li><a href="https://twitter.com/NicholasJBryan">Twitter</a></li>
+					<li><a href="https://orcid.org/0000-0003-1469-7278">ORCID</a></li>
+					<li><a href="https://research.adobe.com/person/nicholas-j-bryan">Official Adobe Page</a></li>
+					<li><a href="https://www.linkedin.com/pub/nick-bryan/22/170/940">LinkedIn</a></li>
+					<li><a href="https://github.com/njb">GitHub</a></li>
+					<li><a href="http://isse.sourceforge.net/">Sourceforge</a></li>
+				</ul>
+			</div>
+			<div class="header-photo">
+				<img src="index_files/head-shot.jpg" alt="Nicholas J. Bryan">
+			</div>
+		</div>
+					<p>
+					</p>
+					<hr size="2" align="left" noshade="">
+					<p>
+
+						<font face="helvetica, ariel, &#39;sans serif&#39;">
+							<b>About</b>: I am <a href="https://research.adobe.com/person/nicholas-j-bryan"
+								border="0">Head of the Music AI group</a> at Adobe Research. My research interests include 
+								audio and music, generative AI, and signal processing.
+							I received my PhD and MA from <a href="http://ccrma.stanford.edu">CCRMA</a>,
+							<a href="http://www.stanford.edu">Stanford University</a> and MS in <a
+								href="http://ee.stanford.edu">Electrical Eng.</a>, also from Stanford. Before that,
+							I received my Bachelor of Music and BS in Electrical Eng. with <i>summa cum laude</i>,
+							general honors, and departmental honors at the U. of Miami-FL.
+							I have received 2 best paper awards, 1 AES Graduate Design Gold award, 1 best reviewer award, and 1 best paper finalist acknowledgement. 
+							I was general co-chair of <a
+							href="http://waspaa.com/organizing-committee/">WASPAA</a> 2023, a 2x elected member of the
+							<a href="https://signalprocessingsociety.org/community-involvement/audio-and-acoustic-signal-processing/aasp-tc-home">IEEE AASP TC</a>, an IEEE Senior Member,
+							and am an Adobe distinguished inventor. I've also been a musician since childhood, <a href="https://en.wikipedia.org/wiki/Wolf_Rounds">performed at Carnegie Hall</a>, 
+							and have been on the <a href="https://www.nytimes.com/2009/12/05/technology/05orchestra.html">front-page</a> of the New York Times.
+					</p>
+					<hr size="2" align="left" noshade="">
+					<h2>News</h2>
+					    <b>[03/2026]</b> "V2M-Zero: Zero-Pair Time-Aligned Video-to-Music Generation" arXiv <a href="https://arxiv.org/abs/2603.11042">arXiv</a><br>
+						<b>[02/2026]</b> "Rethinking Music Captioning with Music Metadata LLMs" accepted to ICASSP 2026 <a href="https://arxiv.org/abs/2602.03023">arXiv</a><br>
+						<b>[02/2026]</b> "A Generative-First Neural Audio Autoencoder" accepted to ICASSP 2026 <a href="https://arxiv.org/abs/2602.15749">arXiv</a><br>
+						<b>[02/2026]</b> "Stemphonic: All-at-once Flexible Multi-stem Music Generation" accepted to ICASSP 2026 <a href="https://arxiv.org/abs/2602.09891">arXiv</a><br>
+						<b>[02/2026]</b> "TAC: Timestamped Audio Captioning" arXiv <a href="https://arxiv.org/abs/2602.15766">arXiv</a><br>
+						<b>[10/2025]</b> Adobe Firefly Generate Soundtrack Released! <a href="https://firefly.adobe.com/generate/soundtrack">web</a><br>
+						<b>[10/2025]</b> New TMLR journal paper! DRAGON: Distributional Rewards Optimize Diffusion Generative Models <a href="https://arxiv.org/abs/2504.15217">arXiv</a>, <a href="https://ml-dragon.github.io/web/">web</a>, <a href="https://youtu.be/DEQnEP737gw?feature=shared">video</a><br>
+						<b>[04/2025]</b> "Beyond Text to Music" Keynote Talk at ICASSP 2025 <a href="https://sites.google.com/view/genda2025">GenDA</a> Workshop. <a href="research/ICASSP_2025_GenDA_Workshhop_Keynote_Beyond_Text_to_Music.pdf">slides</a><br>
+						<b>[02/2025]</b> "Presto! Distilling Steps and Layers for Accelerating Music Generation" accepted to ICLR (Spotlight, top 5%) <a href="https://presto-music.github.io/web/">web</a>.<br>
+						<b>[11/2024]</b> ISMIR 2024 x Adobe Industry Panel Talk.<br>
+						<b>[06/2024]</b> "DITTO-2: Distilled Diffusion Inference-Time T-Optimization for Music Generation" accepted to <a href="https://ismir2024.ismir.net/">ISMIR</a> 2024.<br>
+						<b>[06/2024]</b> "MusicHiFi: Fast High-Fidelity Stereo Vocoding" accepted to <a href="https://signalprocessingsociety.org/publications-resources/ieee-signal-processing-letters">IEEE SPL</a>.
+							<a href="https://arxiv.org/abs/2403.10493">arXiv</a> | <a href="https://musichifi.github.io/web/">web</a> | <a href="https://www.youtube.com/watch?v=iytPC_6OsiQ">video</a><br>
+						<b>[05/2024]</b> "DITTO: Diffusion Inference-time T-Optimization for Music Generation" accepted to <a href="https://icml.cc/">ICML</a> (oral, top 1.5%).
+							<a href="https://arxiv.org/abs/2401.12179">arXiv</a> | <a href="https://ditto-music.github.io/web/">web</a> | <a href="https://youtu.be/QVr-S-DyccU?si=Z9pfHg86GqldDeR2">video</a><br>
+						<b>[04/2024]</b> "Music ControlNet: Multiple Time-varying Controls for Music Generation" accepted to <a href="https://signalprocessingsociety.org/publications-resources/ieeeacm-transactions-audio-speech-and-language-processing">IEEE TASLP</a>.
+						<a href="https://arxiv.org/abs/2311.07069">arXiv</a> | <a href="https://musiccontrolnet.github.io/web/">web</a> | <a href="https://youtu.be/QVr-S-DyccU?si=Z9pfHg86GqldDeR2">video</a><br>
+						<b>[02/2024]</b> <a href="https://blog.adobe.com/en/publish/2024/02/28/adobe-research-audio-creation-editing">Project Music GenAI Control</a> Adobe News.<br>
+						<b>[10/2023]</b> IEEE <a href="https://waspaa.com/organizing-committee/">WASPAA 2023</a> General Co-Chair (w/<a href="https://saige.sice.indiana.edu">Minje Kim</a>).<br>
+
+
+					<script>
+						var coll = document.getElementsByClassName("collapsible");
+						var i;
+
+						for (i = 0; i < coll.length; i++) {
+							coll[i].addEventListener("click", function () {
+								this.classList.toggle("active");
+								var content = this.nextElementSibling;
+								if (content.style.maxHeight) {
+									content.style.maxHeight = null;
+								} else {
+									content.style.maxHeight = content.scrollHeight + "px";
+								}
+							});
+						}
+					</script>
+
+
+
+					</p>
+					<hr size="2" align="left" noshade="">
+
+					<h2>Adobe Internships</h2>
+					For current students, I offer research internships at Adobe Research in San Francisco, CA.
+					Internships are typically during the summer months and for graduate students studying audio/music
+					signal processing, machine learning, or related field. If you are interested, please send me an
+					email with your CV and research interests in October-December before the given summer. My Adobe
+					webpage is <a href="https://research.adobe.com/person/nicholas-j-bryan">here</a>.
+					<!-- <hr size="2" align="left" noshade=""> -->
+
+					</p>
+					<hr size="2" align="left" noshade="">
+
+					<h2>Publications </h2>
+
+					<table>
+
+						<td VALIGN="top">
+							<!-- <table width="800" border="0" cellspacing="10" cellpadding="4" > -->
+							<tr>
+								<td width=256 align="center">
+									<iframe width="250" height="150" src="https://www.youtube.com/embed/NkSOJRa5wsw?si=x1eNaRAa5wsYKVmP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br>
+								</td>
+								<td>
+									<a id="V2M-Zero"><b>"V2M-Zero: Zero-Pair Time-Aligned Video-to-Music Generation"</b></a>
+									<br>
+									<a href="https://irmakbky.github.io/">Y-B. Lin</a>
+									<a href="https://jmcasebeer.github.io/">J. Casebeer</a>
+									<a href="https://mai-t-long.com/">L. Mai</a>
+									<a href="https://anime26398.github.io/">A. Mahapatra</a>
+									<a href="https://www.gedasbertasius.com/">G. Bertasius</a>
+									<a href="#">N. J. Bryan</a>
+									<br>
+									<i>arXiv</i>,
+									March, 2026.<br>
+									(<a href="https://arxiv.org/abs/2603.11042">arXiv</a>, 
+									<a href="https://genjib.github.io/project_page/v2m_zero/">web</a>)
+								</td>
+							</tr>
+
+
+							<tr>
+								<td width=256 align="center">
+									<iframe width="250" height="150" src="index_files/metadatallms.png" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br>
+								</td>
+								<td>
+									<a id="MetadataLLMs"><b>"Rethinking Music Captioning with Music Metadata LLMs"</b></a>
+									<br>
+									<a href="https://irmakbky.github.io/">I. Bukey</a>
+									<a href="https://zhepeiw.com/">Z. Wang</a>
+									<a href="https://chrisdonahue.com/">C. Donahue</a>
+									<a href="#">N. J. Bryan</a>
+									<br>
+									<i>IEEE ICASSP</i>,
+									May, 2026.<br>
+									(<a href="https://arxiv.org/abs/2602.03023">arXiv</a>)
+								</td>
+							</tr>
+
+
+							<tr>
+								<td width=256 align="center">
+									<iframe width="250" height="150" src="https://www.youtube.com/embed/gDIIuLb0cf0?si=rULjAUQI9am4Z2qv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br>
+								</td>
+								<td>
+									<a id="GenAE"><b>"A Generative-First Neural Audio Autoencoder"</b></a>
+									<br>
+									<a href="https://jmcasebeer.github.io/">J. Casebeer</a>
+									<a href="https://gzhu06.github.io/">G. Zhu</a>
+									<a href="https://zhepeiw.com/">Z. Wang</a>
+									<a href="#">N. J. Bryan</a>
+									<br>
+									<i>IEEE ICASSP</i>,
+									May, 2026.<br>
+									(<a href="https://arxiv.org/abs/2602.15749">arXiv</a>,
+									<a href="https://www.youtube.com/watch?v=gDIIuLb0cf0">video</a>)<br>
+								</td>
+							</tr>
+							<tr>
+								<td width=256 align="center">
+									<iframe width="250" height="150" src="https://www.youtube.com/embed/IrGD3CHaPYU?si=WRbu3cq_xtMq1ECb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br>
+								</td>
+								<td>
+									<a id="Stemphonic"><b>"Stemphonic: All-at-once Flexible Multi-stem Music Generation"</b></a>
+									<br>
+									<a href="https://slseanwu.github.io/">S-L Wu</a>
+									<a href="https://gzhu06.github.io/">G. Zhu</a>
+									<a href="https://research.adobe.com/person/juan-pablo-caceres/">J-P. Caceres</a>
+									<a href="https://czhuang.github.io/">C-Z. Huang</a>
+									<a href="#">N. J. Bryan</a>
+									<br>
+									<i>IEEE ICASSP</i>,
+									May, 2026.<br>
+									(<a href="https://arxiv.org/abs/2602.09891">arXiv</a>,
+									<a href="https://stemphonic-demo.vercel.app/">web</a>,
+									<a href="https://youtu.be/IrGD3CHaPYU?si=l__3rIb_xbnSCcZb">video</a>)<br>
+								</td>
+							</tr>
+							<tr>
+								<td width=256 align="center">
+									<iframe width="250" height="150" src="index_files/metadatallms.png" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br>
+								</td>
+								<td>
+									<a id="TAC"><b>"TAC: Timestamped Audio Captioning"</b></a>
+									<br>
+									<a href="https://sonalkum.github.io/">S. Kumar</a>
+									<a href="https://pseeth.github.io/">P. Seetharaman</a>
+									<a href="https://www.knutchen.com/">K. Chen</a>
+									<a href="https://www.urinieto.com/about/">O. Nieto</a>
+									<a href="https://research.adobe.com/person/jiaqi-su/">J. Su</a>
+									<a href="https://zhepeiw.com/">Z. Wang</a>
+									<a href="https://ritheshkumar.com/">R. Kumar</a>
+									<a href="">D. Manocha</a>
+									<a href="#">N. J. Bryan</a>
+									<a href="#">Z. Jin</a>
+									<a href="#">J. Salamon</a>
+									<br>
+									<i>arXiv</i>,
+									Feb, 2026.<br>
+									(<a href="https://arxiv.org/abs/2602.03023">arXiv</a>)
+								</td>
+							</tr>
+							<tr>
+								<td width=256 align="center">
+									<iframe width="250" height="150" src="https://www.youtube.com/embed/DEQnEP737gw?si=mcrMNzmEZzCA8zE_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br>
+								</td>
+								<td>
+									<a id="DRAGON"><b>"DRAGON: Distributional Rewards Optimize Diffusion Generative Models"</b></a>
+									<br>
+									<a href="https://bai-yt.github.io/">Y. Bai</a>
+									<a href="https://jmcasebeer.github.io">J. Casebeer</a>
+									<a href="https://people.eecs.berkeley.edu/~sojoudi/">S. Sojoudi</a>
+									<a href="#">N. J. Bryan</a>
+									<br>
+									<i>arXiv</i>,
+									April, 2025.<br>
+									(<a href="https://arxiv.org/abs/2504.15217">arXiv</a>,
+									<a href="https://ml-dragon.github.io/web/">web</a>,
+									<a href="https://youtu.be/DEQnEP737gw?feature=shared">video</a>)<br>
+								</td>
+							</tr>
+
+
+							<tr>
+								<td width=256 align="center">
+									<iframe width="250" height="150" src="https://www.youtube.com/embed/NE_x-5I19CY?si=yBGTqY3WhDMfMymA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br>
+								</td>
+								<td>
+									<a id="Presto"><b>"Presto! Distilling Steps and Layers for Accelerating Music Generation"</b></a>
+									<br>
+									<a href="https://zacharynovack.github.io/">Z. Novack</a>
+									<a href="https://gzhu06.github.io">G. Zhu</a>
+									<a href="https://jmcasebeer.github.io">J. Casebeer</a>
+									<a href="https://cseweb.ucsd.edu/~jmcauley/">J. McAuley</a>,
+									<a href="https://cseweb.ucsd.edu/~tberg/">T. Berg-Kirkpatrick</a>, 
+									<a href="#">N. J. Bryan</a>
+									<br>
+									<i>ICLR (Spotlight, top 5%)</i>,
+									April, 2025.<br>
+									(<a href="https://arxiv.org/abs/2410.05167">arXiv</a>,
+									<a href="https://presto-music.github.io/web/">web</a>,
+									<a href="https://youtu.be/NE_x-5I19CY">video</a>)<br>
+								</td>
+							</tr>
+
+
+							<tr>
+								<td width=256 align="center">
+									<iframe width="250" height="150" src="https://www.youtube.com/embed/iytPC_6OsiQ?si=ETg6Ov2VsNHImb-f" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br>
+								</td>
+								<td>
+									<a id="MusicHiFi_SPL"><b>"MusicHiFi: Fast High-Fidelity Stereo Vocoding"</b></a>
+									<br>
+									<a href="https://gzhu06.github.io">G. Zhu</a>
+									<a href="https://research.adobe.com/person/juan-pablo-caceres/">J.-P. Caceres</a>,
+									<a href="https://hajim.rochester.edu/ece/sites/zduan/">Z. Duan</a>, 
+									<a href="#">N. J. Bryan</a>
+									<br>
+									<i>IEEE SPL</i>,
+									March, 2024.<br>
+									(<a href="https://arxiv.org/abs/2403.10493">arXiv</a>,
+									<a href="https://musichifi.github.io/web/">web</a>,
+									<a href="https://www.youtube.com/watch?v=iytPC_6OsiQ">video</a>)<br>
+								</td>
+							</tr>
+
+
+							<tr>
+								<td width=256 align="center">
+									<iframe width="250" height="150" src="https://www.youtube.com/embed/KooosSNPNo8?si=C5WQyCijuKXOhs_R" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br>
+								</td>
+								<td>
+									<a id="DITTO_ICML"><b>"DITTO: Diffusion Inference-time T-Optimization for Music Generation"</b></a>
+									<br>
+									<a href="https://zacharynovack.github.io/">Z. Novack</a>
+									<a href="https://cseweb.ucsd.edu/~jmcauley/">J. McAuley</a>,
+									<a href="https://cseweb.ucsd.edu/~tberg/">T. Berg-Kirkpatrick</a>, 
+									<a href="#">N. J. Bryan</a>
+									<br>
+									<i>ICML (oral, top 1.5%)</i>,
+									January, 2024.<br>
+									(<a href="https://arxiv.org/abs/2401.12179">arXiv</a>,
+									<a href="https://ditto-music.github.io/web/">web</a>,
+									<a href="https://youtu.be/KooosSNPNo8?si=1QrT5LiIta3LVRrB">video</a>)<br>
+								</td>
+							</tr>
+
+
+
+							<tr>
+								<td width=256 align="center">
+									<iframe width="250" height="150" src="https://www.youtube.com/embed/QVr-S-DyccU?si=4IdbxhHNjp9QoVGF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br>
+								</td>
+								<td>
+									<a id="MusicControlNet_TASLP"><b>"Music ControlNet: Multiple Time-varying Controls for Music Generation"</b></a>
+									<br>
+									<a href="https://slseanwu.github.io/">S-L. Wu</a>
+									<a href="https://chrisdonahue.com/">C. Donahue</a>,
+									<a href="https://sites.google.com/view/shinjiwatanabe">S. Watanabe</a>, 
+									<a href="#">N. J. Bryan</a>
+									<br>
+									<i>Submitted to IEEE Transactions on Audio, Speech, and Language Processsing (TASLP)</i>,
+									November, 2023.<br>
+									(<a href="https://arxiv.org/abs/2311.07069">arXiv</a>,
+									<a href="https://musiccontrolnet.github.io/web/">web</a>,
+									<a href="https://youtu.be/QVr-S-DyccU">video</a>)<br>
+								</td>
+							</tr>
+
+
+							<tr>
+								<td width=256 align="center">
+									<iframe width="250" height="150" src="https://www.youtube.com/embed/incb1QNSvW8"
+										title="YouTube video player" frameborder="0"
+										allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+										allowfullscreen></iframe>
+								</td>
+								<td>
+									<a id="MetaAF_TASLP"><b>"Meta-AF: Meta-learning for Adaptive Filters."</b></a>
+									<br>
+									<a href="https://jmcasebeer.github.io">J. Casebeer</a>
+									<a href="#">N. J. Bryan</a>,
+									<a href="https://paris.cs.illinois.edu">P. Smaragdis</a>
+									<br>
+									<i>IEEE Transactions on Audio, Speech, and Language Processsing (TASLP)</i>,
+									January, 2022.<br>
+									<i>Presented at IEEE International Conf. on Acoustics, Speech, and Signal Processing
+										(ICASSP)</i>,
+									June, 2023.<br>
+									(<a href="https://ieeexplore.ieee.org/document/9961879">TASLP</a>,
+									<a href="https://arxiv.org/abs/2204.11942">arXiv</a>,
+									<a href="https://jmcasebeer.github.io/projects/metaaf">web</a>,
+									<a href="https://github.com/adobe-research/MetaAF">code</a>,
+									<a href="https://youtu.be/incb1QNSvW8">video</a>)<br>
+								</td>
+							</tr>
+
+							<!------------------------------------------------------------------------------------>
+							<tr>
+								<!-- <td width=256 align="center"><img src="index_files/JAES_2022_DeepAFx-ST.png" width=250 height=120></td> -->
+								<td width=256 align="center">
+									<iframe width="250" height="150" src="https://www.youtube.com/embed/IZp455wiMk4"
+										title="YouTube video player" frameborder="0"
+										allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+										allowfullscreen></iframe>
+								</td>
+								<td>
+									<a id="IWAENC_2021_hometa"><b>"Style Transfer of Audio Effects with Differentiable
+											Signal Processing."</b></a>
+									<br>
+									<a href="https://www.christiansteinmetz.com/">C. J. Steinmetz</a>,
+									<a href="#">N. J. Bryan</a>,
+									<a href="http://www.eecs.qmul.ac.uk/~josh/">J. D. Reiss</a>,
+									<br>
+									<i>Journal of the Audio Engineering Society (JAES)</i>,
+									September, 2022.
+									<br>
+									<i>Presented at 154th AES Europe Convention</i>,
+									May, 2023.<br>
+									(<a href="https://arxiv.org/abs/2207.08759">arXiv</a>,
+									<a href="https://github.com/adobe-research/DeepAFx-ST">code</a>,
+									<a href="https://csteinmetz1.github.io/DeepAFx-ST/">demo</a>)
+									<br>
+								</td>
+							</tr>
+
+
+
+							<!------------------------------------------------------------------------------------>
+							<tr>
+								<td width=256 align="center"><img src="index_files/IWAENC2022_hometa.png" width=250
+										height=120></td>
+								<td>
+									<a id="IWAENC_2021_hometa"><b>"Meta-learning for Adaptive Filters with Higher-order
+											Frequency Dependencies."</b></a>
+									<br>
+									<a href="https://www.linkedin.com/in/junkai-wu-19015b198/">J. Wu</a>,
+									<a href="https://jmcasebeer.github.io">J. Casebeer</a>
+									<a href="#">N. J. Bryan</a>,
+									<a href="https://paris.cs.illinois.edu">P. Smaragdis</a>,
+									<br>
+									<i>IEEE Workshop on Acoustic Signal Enhancement (IWAENC)</i>,
+									September, 2022.
+									<br>
+									(<a href="https://arxiv.org/abs/2209.09955">arXiv</a>,
+									<a href="https://github.com/adobe-research/MetaAF">code</a>,
+									<a href="https://jmcasebeer.github.io/metaaf/higher-order">demo</a>)
+									<br>
+								</td>
+							</tr>
+
+							<!------------------------------------------------------------------------------------>
+							<tr>
+								<td width=256 align="center"><img src="index_files/ICASSP_2022_remix.png" width=250
+										height=120></td>
+								<td>
+									<a id="ICASSP2021_remix"><b>"Don't Separate, Learn to Remix: End-to-End Neural
+											Remixing with Joint Optimization."</b></a>
+									<br>
+									<a href="https://haiciyang.github.io/">H. Yang</a>,
+									<a href="https://www.linkedin.com/in/sbfirodiya">S. Firodiya</a>
+									<a href="#">N. J. Bryan</a>,
+									<a href="https://minjekim.com/">M. Kim</a>,
+									<br>
+									<i>IEEE International Conference on Acoustics, Speech, and Signal Processing
+										(ICASSP)</i>, 2022.
+									<br>
+									(<a href="https://arxiv.org/abs/2107.13634">arXiv</a>,
+									<a href="https://ieeexplore.ieee.org/document/9746077">paper</a>
+									<a href="https://github.com/haiciyang/Remixing">code</a>)
+									<br>
+								</td>
+							</tr>
+
+							<!------------------------------------------------------------------------------------>
+							<tr>
+								<td width=256 align="center"><img src="index_files/ISMIR_2021_emotion.jpeg" width=250
+										height=120></td>
+								<td>
+									<a id="ISMIR_2021_Award"><b>"Emotion Embedding Spaces for Matching Music to
+											Stories."</b></a>
+									<br>
+									<a href="https://minzwon.github.io">M. Won</a>,
+									<a href="http://www.justinsalamon.com">J. Salamon</a>
+									<a href="#">N. J. Bryan</a>,
+									<a href="http://Gauthamjmysore.com">G. J. Mysore</a>,
+									<a href="https://www.upf.edu/web/xavier-serra">X. Serra</a>
+									<br>
+									<i>International Society for Music Information Retrieval Conference (ISMIR)</i>,
+									2021.
+									<br>
+									(<a href="https://github.com/minzwon/text2music-emotion-embedding">code</a>,
+									<a href="research/ISMIR_2021_emotion.pdf">paper</a>)
+									<br>
+									<i class="fa fa-trophy" style="font-size:16px;color:goldenrod"></i><b>ISMIR Best
+										Student Paper Award Winner</b>
+								</td>
+							</tr>
+
+							<!------------------------------------------------------------------------------------>
+							<tr>
+								<td width=256 align="center"><img src="index_files/ISMIR_2021_sections.png" width=250
+										height=120></td>
+								<td>
+									<a id="ISMIR_2021_Award"><b>"Deep Embeddings and Section Fusion Improve Music
+											Segmentation."</b></a>
+									<br>
+									<a href="http://www.justinsalamon.com">J. Salamon</a>
+									<a href="https://www.urinieto.com/about/">O. Nieto</a>,
+									<a href="#">N. J. Bryan</a>,
+
+									<br>
+									<i>International Society for Music Information Retrieval Conference (ISMIR)</i>,
+									2021.
+									<br>
+									(<a href="https://github.com/justinsalamon/musicseg_deepemb">code</a>,
+									<a href="research/ISMIR_2021_sections.pdf">paper</a>)
+									<br>
+								</td>
+							</tr>
+
+							<!------------------------------------------------------------------------------------>
+							<tr>
+								<td width=256 align="center"><img src="index_files/waspaa_2021_rethinking_few_shot.png"
+										width=250 height=120></td>
+								<td>
+									<a id="WASPAA_2021_Award"><b>"Who Calls the Shots? Rethinking Few-Shot Learning for
+											Audio."</b></a>
+									<br>
+									<a href="https://y-wang.weebly.com/">Y. Wang</a>,
+									<a href="#">N. J. Bryan</a>,
+									<a href="http://www.justinsalamon.com">J. Salamon</a>
+									<a href="https://markcartwright.com">M. Cartwright</a>,
+									<a href="https://engineering.nyu.edu/faculty/juan-pablo-bello">J. P. Bello</a>
+									<br>
+									<i>IEEE Workshop on Applications of Signal Processing to Audio and Acoustics
+										(WASPAA)</i>, 2021.
+									<br>
+									(<a href="https://arxiv.org/pdf/2110.09600.pdf">arXiv</a>,
+									<a href="https://zenodo.org/record/5574135#.YXDekC1h30q">data</a>,
+									<a href="https://github.com/wangyu/rethink-audio-fsl">code</a>,
+									<a href="research/WASPAA2021_rethinking_few_shot.pdf">paper</a>,
+									<a href="https://www.youtube.com/watch?v=IdNldhcX-nM">full talk</a>)
+									<br>
+									<i class="fa fa-trophy" style="font-size:16px;color:goldenrod"></i><b>IEEE WASPAA
+										Special Best Paper Award Winner</b>
+								</td>
+							</tr>
+
+							<!------------------------------------------------------------------------------------>
+							<tr>
+								<td width=256 align="center"><img src="index_files/waspaa_2021_auto_dsp_aec.png"
+										width=250 height=120></td>
+								<td>
+									<b>"Auto-DSP: Learning to Optimize Acoustic Echo Cancellers."</b>
+									<br>
+
+									<a href="https://jmcasebeer.github.io/">J. Casebeer</a>,
+									<a href="#">N. J. Bryan</a>
+									<a href="https://paris.cs.illinois.edu/">P. Smaragdis</a>,
+									<br>
+									<i>IEEE Workshop on Applications of Signal Processing to Audio and Acoustics
+										(WASPAA)</i>, 2021.
+									<br>
+									(<a href="https://arxiv.org/abs/2110.04284">arXiv</a>,
+									<a href="https://jmcasebeer.github.io/projects/auto-dsp/">web</a>,
+									<a href="https://github.com/jmcasebeer/autodsp">code</a>,
+									<a href="research/WASPAA_2021_Auto_DSP.pdf">paper</a>,
+									<a href="https://www.youtube.com/watch?v=y51hUaw2sTg">short talk</a>,
+									<a href="https://www.youtube.com/watch?v=oe0owGeCsqI">full talk</a>)
+								</td>
+							</tr>
+
+
+
+							<!------------------------------------------------------------------------------------>
+							<tr>
+								<td width=256 align="center">
+									<iframe width="250" height="150" src="https://www.youtube.com/embed/6ujkPwcQKo4"
+										title="YouTube video player" frameborder="0"
+										allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+										allowfullscreen></iframe>
+								</td>
+								<td>
+									<b>"Differentiable Signal Processing with Black-Box Audio Effects."</b>
+									<br>
+
+									<a href="https://m-marco.com/about/">M. A. Martínez Ramírez</a>,
+									<a href="http://www.oliverwang.info/">O. Wang</a>,
+									<a href="https://paris.cs.illinois.edu/">P. Smaragdis</a>,
+									<a href="#">N. J. Bryan</a>
+
+									<br>
+									<i>IEEE International Conference on Acoustics, Speech, and Signal Processing
+										(ICASSP)</i>, 2021.
+									<br>
+									(<a href="https://arxiv.org/abs/2105.04752">arXiv</a>,
+									<a href="https://mchijmma.github.io/DeepAFx/">web</a>,
+									<a href="https://github.com/adobe-research/DeepAFx">code</a>,
+									<a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9415103">ieee
+										explore</a>,
+									<a href="research/icassp2021_deepafx.pdf">paper</a>
+									<a href="https://www.youtube.com/watch?v=C_UX0DT2knA">long-talk</a>)
+								</td>
+							</tr>
+
+
+							<!------------------------------------------------------------------------------------>
+							<tr>
+								<td width=256 align="center"><img src="index_files/few-shot_icassp_2021.png" width=250
+										height=120></td>
+								<td>
+									<b>"Few-shot Continual Learning for Audio Classification."</b>
+									<br>
+
+									<a href="https://y-wang.weebly.com/">Y. Wang</a>,
+									<a href="#">N. J. Bryan</a>,
+									<a href="https://markcartwright.com">M. Cartwright</a>,
+									<a href="https://engineering.nyu.edu/faculty/juan-pablo-bello">J.-P. Bello</a>,
+									<a href="http://www.justinsalamon.com">J. Salamon</a>
+									<br>
+									<i>IEEE International Conference on Acoustics, Speech, and Signal Processing
+										(ICASSP)</i>, 2021.
+									<br>
+									(<a
+										href="research/icassp2021_continualFSL.pdf">paper</a>,
+									<a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9413584">ieee
+										explore</a>)
+								</td>
+							</tr>
+
+
+							<!------------------------------------------------------------------------------------>
+							<tr>
+								<td width=256 align="center"><img src="index_files/prosody_icassp_2021.png" width=250
+										height=120></td>
+								<td>
+									<b>"Context-aware Prosody Correction for Text-based Speech Editing."</b>
+									<br>
+
+									<a href="http://maxrmorrison.com">M. Morrison</a>,
+									<a href="https://research.adobe.com/person/zeyu-jin/">L. Rencker</a>,
+									<a href="https://research.adobe.com/person/zeyu-jin/">Z. Jin</a>,
+									<a href="#">N. J. Bryan</a>,
+									<a href="https://research.adobe.com/person/juan-pablo-caceres/">J.P. Caceres</a>,
+									<a href="https://bryan-pardo.github.io">B. Pardo</a>
+
+									<br>
+									<i>IEEE International Conference on Acoustics, Speech, and Signal Processing
+										(ICASSP)</i>, 2021.
+									<br>
+									(<a href="https://arxiv.org/abs/2102.08328">arXiv</a>,
+									<a href="https://www.maxrmorrison.com/sites/context-aware/">web</a>,
+									<a href="research/icassp2021_prosody.pdf">paper</a>)
+								</td>
+							</tr>
+
+
+
+							<!------------------------------------------------------------------------------------>
+							<tr>
+								<td width=256 align="center"><img src="index_files/interspeech2020-jnd-metric.png"
+										width=250 height=120></td>
+								<td>
+									<a id="Interspeech_2020_Award"><b>"A Differentiable Perceptual Audio Metric Learned
+											from Just Noticeable Differences."</b></a>
+									<br>
+
+									<a href="https://www.cs.princeton.edu/~pmanocha//">P. Manocha</a>,
+									<a href="https://www.cs.princeton.edu/~af/">A. Finkelstein</a>,
+									<a href="https://richzhang.github.io">R. Zhang</a>,
+									<a href="#">N. J. Bryan</a>,
+									<a href="https://ccrma.stanford.edu/~gautham">G. J. Mysore</a>,
+									<a href="https://research.adobe.com/person/zeyu-jin/">Z. Jin</a>
+
+									<br>
+									<i>Interspeech</i>, 2020.
+									<br>
+									(<a href="https://arxiv.org/pdf/2001.04460.pdf">arXiv</a>,
+									<a href="https://pixl.cs.princeton.edu/pubs/Manocha_2020_ADP/">web</a>,
+									<a href="https://github.com/pranaymanocha/PerceptualAudio">code</a>)
+									<br>
+									<i class="fa fa-trophy" style="font-size:16px;color:silver"></i><b>Interspeech Best
+										Student Paper Finalist</b>
+								</td>
+							</tr>
+
+							<!------------------------------------------------------------------------------------>
+							<tr>
+								<td width=256 align="center"><img
+										src="index_files/interspeech2020-controllable-neural-prosody-synthesis.png"
+										width=250 height=120></td>
+								<td>
+									<b>"Controllable Neural Prosody Synthesis."</b>
+									<br>
+
+									<a href="http://maxrmorrison.com">M. Morrison</a>,
+									<a href="https://research.adobe.com/person/zeyu-jin/">Z. Jin</a>,
+									<a href="http://www.justinsalamon.com">J. Salamon</a>,
+									<a href="#">N. J. Bryan</a>,
+									<a href="https://ccrma.stanford.edu/~gautham">G. J. Mysore</a>
+
+									<br>
+									<i>Interspeech</i>, 2020.
+									<br>
+									(<a
+										href="research/interspeech2020-controllable-neural-prosody-synthesis.pdf">paper</a>
+									|
+									<a href="https://arxiv.org/pdf/2008.03388.pdf">arXiv</a>,
+									<a href="https://www.maxrmorrison.com/sites/controllable-prosody">web</a>)
+								</td>
+							</tr>
+
+
+							<!------------------------------------------------------------------------------------>
+							<tr>
+								<td width=256 align="center"><img
+										src="index_files/ismir2020-metric-v-classification.png" width=220 height=150>
+								</td>
+								<td>
+									<b>"Metric Learning vs Classification for Disentangled Music Representation
+										Learning."</b>
+									<br>
+
+									<a href="https://jongpillee.github.io/about.html">J. Lee</a>,
+									<a href="#">N. J. Bryan</a>,
+									<a href="http://www.justinsalamon.com">J. Salamon</a>,
+									<a href="https://research.adobe.com/person/zeyu-jin/">Z. Jin</a>
+									<a href="https://mac.kaist.ac.kr/~juhan/">J. Nam</a>
+									<br>
+									<i>International Society for Music Information Retrieval (ISMIR)</i>, 2020.
+									<br>
+									(<a
+										href="research/ismir2020-metric-v-classification.pdf">paper</a>
+									|
+									<a href="https://arxiv.org/pdf/2008.03729.pdf">arXiv</a> |
+									<a href="https://jongpillee.github.io/metric-vs-classification/">web</a>)
+								</td>
+							</tr>
+
+							<!------------------------------------------------------------------------------------>
+							<tr>
+								<td width=256 align="center"><img src="index_files/ismir2020-few-shot-drum.png"
+										width=250 height=120></td>
+								<td>
+									<b>"Few-shot Drum Transcription in Polyphonic Music." </b>
+									<br>
+
+									<a href="https://y-wang.weebly.com/">Y. Wang</a>,
+									<a href="http://www.justinsalamon.com">J. Salamon</a>,
+									<a href="https://markcartwright.com">M. Cartwright</a>,
+									<a href="#">N. J. Bryan</a>,
+									<a href="https://engineering.nyu.edu/faculty/juan-pablo-bello">J.-P. Bello</a>
+									<br>
+									<i>International Society for Music Information Retrieval (ISMIR)</i>, 2020.
+									<br>
+									(<a
+										href="research/ismir2020-few-shot-drum.pdf">paper</a>
+									|
+									<a href="https://arxiv.org/pdf/2008.02791.pdf">arXiv</a>)
+								</td>
+							</tr>
+
+							<!------------------------------------------------------------------------------------>
+							<tr>
+								<td width=256 align="center"><img src="index_files/icassp2020_music_sim.png" width=250
+										height=120></td>
+								<td>
+									<b>"Disentangled Multidimensional Metric Learning For Music Similarity." </b>
+									<br>
+
+									<a href="https://jongpillee.github.io/about.html">J. Lee</a>,
+									<a href="#">N. J. Bryan</a>,
+									<a href="http://www.justinsalamon.com">J. Salamon</a>,
+									<a href="https://research.adobe.com/person/zeyu-jin/">Z. Jin</a>
+									<a href="https://mac.kaist.ac.kr/~juhan/">J. Nam</a>
+									<br>
+									<i>IEEE International Conference on Acoustics, Speech, and Signal Processing
+										(ICASSP)</i>, 2020.
+									<br>
+									(<a href="https://jongpillee.github.io/multi-dim-music-sim/">project page</a> |
+									<a
+										href="research/icassp2020_music_sim.pdf">paper</a>
+									|
+									<a href="https://ieeexplore.ieee.org/document/9053442/">ieee link</a> |
+									<a href="https://arxiv.org/pdf/2008.03720">arXiv</a> |
+									<a href="https://youtu.be/hhS2kGNtnCM">talk</a> |
+									<a href="https://zenodo.org/record/3889149#.XuGwVi2ZN24">data set</a>)
+								</td>
+							</tr>
+
+							<!------------------------------------------------------------------------------------>
+							<tr>
+								<td width=256 align="center"><img src="index_files/icassp2020_style_transfer.png"
+										width=250 height=100></td>
+								<td>
+									<b>"One-Shot Parametric Audio Production Style Transfer With Application to
+										Frequency Equalization." </b>
+									<br>
+
+									<a href="https://www.researchgate.net/profile/Stylianos_Mimilakis">S. I.
+										Mimilakis</a>,
+									<a href="#">N. J. Bryan</a>,
+									<a href="https://paris.cs.illinois.edu">P. Smaragdis</a>
+									<br>
+									<i>IEEE International Conference on Acoustics, Speech, and Signal Processing
+										(ICASSP)</i>, 2020.
+									<br>
+									(<a href="https://js-mim.github.io/sp-demo/">project page</a> |
+									<a
+										href="research/icassp2020_style_transfer.pdf">paper</a>
+									|
+									<a href="https://ieeexplore.ieee.org/document/9054108/">ieee link</a> |
+									<a href="https://www.youtube.com/watch?v=_djACv33tuk">talk</a>)
+								</td>
+							</tr>
+
+							<!------------------------------------------------------------------------------------>
+							<tr>
+								<td width=256 align="center"><img src="index_files/icassp2020_few_shot_sed.png"
+										width=250 height=130></td>
+								<td>
+									<b>"Few-Shot Sound Event Detection." </b>
+									<br>
+
+									<a href="https://y-wang.weebly.com/">Y. Wang</a>,
+									<a href="http://www.justinsalamon.com">J. Salamon</a>,
+									<a href="#">N. J. Bryan</a>,
+									<a href="https://engineering.nyu.edu/faculty/juan-pablo-bello">J.-P. Bello</a>
+									<br>
+									<i>IEEE International Conference on Acoustics, Speech, and Signal Processing
+										(ICASSP)</i>, 2020.
+									<br>
+									(<a
+										href="research/icassp2020_few_shot_sed.pdf">paper</a>
+									|
+									<a href="https://ieeexplore.ieee.org/document/9054708">ieee link</a> |
+									<a href="https://youtu.be/v9CDct30Nlg">talk</a>)
+								</td>
+							</tr>
+
+
+							<!------------------------------------------------------------------------------------>
+							<tr>
+								<!-- <td width=256 align="center"><img src="index_files/icassp2020_ir_augmentation.png" width=250 height=120></td> -->
+								<td width=256 align="center">
+									<iframe width="250" height="150" src="https://www.youtube.com/embed/G62HH-bz7y4"
+										title="YouTube video player" frameborder="0"
+										allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+										allowfullscreen></iframe>
+								</td>
+								<td>
+									<b>"Impulse Response Data Augmentation and Deep Neural Networks For Blind Room
+										Acoustic Parameter Estimation." </b>
+									<br>
+
+									<a href="#">N. J. Bryan</a>
+									<br>
+									<i>IEEE International Conference on Acoustics, Speech, and Signal Processing
+										(ICASSP)</i>, 2020.
+									<br>
+									(<a
+										href="research/icassp2020_ir_augmentation.pdf">paper</a>
+									|
+									<a
+										href="https://ieeexplore.ieee.org/iel7/9040208/9052899/09052970.pdf?casa_token=KvAq0bvERYIAAAAA:MMaF784bD1KUBWrAa_677sfgEa8JMOEuDcZ9-6jET-KSX76QV_ce-BP0Nh-NIQ1f3qX0ehSt7Ug">ieee
+										link</a> |
+									<a href="https://www.youtube.com/watch?v=G62HH-bz7y4">talk</a>)
+								</td>
+							</tr>
+
+
+							<!------------------------------------------------------------------------------------>
+							<tr>
+								<td width=256 align="center"><img src="index_files/ieeevr2020_deep_acoustic.png"
+										width=250 height=120></td>
+								<td>
+									<b>"Scene-Aware Audio Rendering via Deep Acoustic Analysis." </b>
+									<br>
+
+									<a href="http://cs.umd.edu/~zhy">Z. Tang</a>
+									<a href="#">N. J. Bryan</a>
+									<a href="http://dingzeyu.li">D. Li</a>
+									<a href="https://langlo.is">T. Langlois</a>
+									<a href="https://www.cs.umd.edu/people/dmanocha">D. Manocha</a>
+									<br>
+									<i>IEEE VR Journal Track (TVCG)</i>, 2020.
+									<br>
+									(<a
+										href="research/ieeevr2020_deep_acoustic.pdf">paper</a>
+									|
+									<a
+										href="https://ieeexplore.ieee.org/iel7/2945/4359476/08998301.pdf?casa_token=Jp46bBs_m4QAAAAA:uSSqLxemSYVtTyVjdi1vo7fUDQXWTaGedc0jytMpcmT3OAiWqWo4P5twQQZl0u4Hu_PZFQZGXsQ">ieee</a>
+									|
+									<a href="https://arxiv.org/pdf/1911.06245.pdf">arXiv</a> |
+									<a href="https://gamma.umd.edu/pro/sound/sceneaware">project page</a> |
+									<a href="https://www.youtube.com/watch?v=0xxjG9hGEcA&feature=youtu.be">video</a>
+									)
+								</td>
+							</tr>
+
+							<!------------------------------------------------------------------------------------>
+							<tr>
+								<td width=256 align="center"><img src="index_files/chi2014.png" width=250 height=120>
+								</td>
+								<td>
+									<b>"ISSE: An Interactive Source Separation Editor." </b>
+									<br>
+									<a href="#">N. J. Bryan</a>,
+									<a href="https://ccrma.stanford.edu/~gautham">G. J. Mysore</a>,
+									<a href="https://ccrma.stanford.edu/~ge">G. Wang</a>
+									<br>
+									<i>Human Factors in Computing Systems (CHI)</i>, 2014.<br>
+									(<a href="http://isse.sourceforge.net">project page</a> |
+									<a href="https://dl.acm.org/doi/pdf/10.1145/2556288.2557253">paper</a> |
+									<a href="https://youtu.be/Rd3prIkO5bg">video</a>)
+
+								</td>
+							</tr>
+
+
+							<!------------------------------------------------------------------------------------>
+							<tr>
+								<td width=256 align="center">
+									<iframe width="250" height="150"
+										src="https://www.youtube.com/embed/Rd3prIkO5bg?feature=player_detailpage"
+										frameborder="0" allowfullscreen></iframe>
+								</td>
+								<td>
+									<a id="AES_2013_Award"><b>"Interactive Sound Source Separation."</b></a>
+									<br>
+									<a href="#">N. J. Bryan</a>.
+									<br>
+									<i>Stanford University</i>,
+									Stanford, CA, USA. March, 2014.
+									<br>(<a href="research/phd-thesis.pdf">PhD
+										Thesis</a>)
+									<br>
+									<br>
+									* ISSE: An Interactive Source Separation Editor (<a
+										href="research/ISSE-I.pdf">talk 1</a>) (<a
+										href="research/ISSE-II.pdf">talk 2</a>)
+									<br>
+									* Software (<a href="http://isse.sourceforge.net">link</a>)
+									<br>
+									* C++ code (<a href="http://sourceforge.net/p/isse/code/ci/master/tree/">link</a>)
+									<br>
+									* Matlab code (<a
+										href="http://sourceforge.net/projects/isse/files/?source=navbar">link</a>)
+									<br>
+									* Demos (<a href="http://isse.sourceforge.net/demos.html">link</a>)
+									<br>
+									* SiSEC results (<a
+										href="http://www.onn.nii.ac.jp/sisec13/evaluation_result/MUS/testMUS2013.htm">link</a>)
+									<br>
+									* Publications (<a href="research/iss/">link</a>)
+									<br>
+									<i class="fa fa-trophy" style="font-size:16px;color:goldenrod"></i><b>AES Graduate
+										Student Design Gold Award</b>
+								</td>
+							</tr>
+
+
+							<!------------------------------------------------------------------------------------>
+							<tr>
+								<td width=256 align="center"> <img src="index_files/ismir-2013.png" width=250
+										height=120> </td>
+								<td>
+									<b>"Source Separation of Polyphonic Music With Interactive User-Feedback on a Piano
+										Roll Display." </b>
+									<br>
+									<a href="#">N. J. Bryan</a>,
+									<a href="https://ccrma.stanford.edu/~gautham">G. J. Mysore</a>,
+									<a href="https://ccrma.stanford.edu/~ge">G. Wang</a>
+									<br>
+									<i>International Society for Music Information Retrieval Conference (ISMIR)</i>,
+									2013.
+									<br>
+									(<a href="research/pitch/">web</a> | <a
+										href="research/ismir-2013.pdf">paper</a>)
+								</td>
+							</tr>
+
+
+							<!------------------------------------------------------------------------------------>
+							<tr>
+								<td width=256 align="center"> <img src="index_files/icml2013-pic.jpg" width=250
+										height=120> </td>
+								<td>
+									<b>"An Efficient Posterior Regularized Latent Variable Model for Interactive Sound
+										Source Separation." </b>
+									<br>
+									<a href="#">N. J. Bryan</a>,
+									<a href="https://ccrma.stanford.edu/~gautham">G. J. Mysore</a>
+									<br>
+									<i>International Conference on Machine Learning (ICML)</i>, 2013.
+									<br>
+									(<a href="research/iss">web</a> | <a
+										href="research/icml2013.pdf">paper</a> |
+									<a
+										href="http://www.onn.nii.ac.jp/sisec13/evaluation_result/MUS/testMUS2013.htm">sisec</a>
+									|
+									<a href="http://www.youtube.com/embed/nyODK-J9keo">Adobe MAX</a> |
+									<a href="research/ICML2013-poster.pdf">poster</a> |
+									<a href="research/ICML2013-slides.pdf">slides</a>)
+
+								</td>
+							</tr>
+
+
+
+							<!------------------------------------------------------------------------------------>
+							<tr>
+								<td width=256 align="center"> <img src="index_files/icassp2013-pic.jpg" width=150
+										height=120></td>
+								<td>
+									<b>"Interactive Refinement of Supervised and Semi-Supervised Sound Source Separation
+										Estimates." </b>
+									<br>
+									<a href="#">N. J. Bryan</a>,
+									<a href="https://ccrma.stanford.edu/~gautham">G. J. Mysore</a>
+									<br>
+									<i>IEEE International Conference on Acoustics, Speech, and Signal Processing
+										(ICASSP)</i>, 2013.
+									<br>
+									(<a href="research/iss">web</a> | <a
+										href="research/icassp-preprint-2013.pdf">pre-print</a>
+									|
+									<a href="research/ICASSP2013-poster.pdf">poster</a>)
+
+								</td>
+							</tr>
+
+
+
+							<!------------------------------------------------------------------------------------>
+							<tr>
+								<td width=256 align="center"> <img src="index_files/iui-pic.jpg" width=200 height=120>
+								</td>
+								<td>
+									<b>"Interactive User-Feedback for Sound Source Separation." </b>
+									<br>
+									<a href="#">N. J. Bryan</a>,
+									<a href="https://ccrma.stanford.edu/~gautham">G. J. Mysore</a>
+									<br>
+									<i>International Conf. on Intelligent User-Interfaces, Workshop on Interative
+										Machine Learning</i>, 2013.
+									<br>
+									(<a href="research/iss">web</a> | <a
+										href="research/iui-2013.pdf">abstract</a>)
+
+								</td>
+							</tr>
+
+
+
+							<!------------------------------------------------------------------------------------>
+							<tr>
+								<td width=256 align="center"> <img src="index_files/dafx-2012.jpg" width=200> </td>
+								<td>
+									<b>"User-Guided Variable-Rate Time-Stretching Via Stiffness Control."</b>
+									<br>
+									<a href="#">N. J. Bryan</a>,
+									<a href="http://ccrma.stanford.edu/~jorgeh">J. Herrera</a>,
+									<a href="http://ccrma.stanford.edu/~ge">G. Wang</a>
+									<br>
+									<i>International Conference on Digital Audio Effects (DAFX)</i>, 2012.
+									<br>
+									(<a href="/research/stretch">web</a> |
+									<a href="research/DAFX2012-stiffness.pdf">paper</a>
+									|
+									<a href="research/stiffness-ccrma-dsp-seminar.pdf">
+										slides (long)</a> |
+									<a href="research/DAFX-2012-slides.pdf">slides
+										(short)</a>
+									)
+								</td>
+							</tr>
+
+
+							<!------------------------------------------------------------------------------------>
+							<tr>
+								<td width=256 align="center"> <img src="index_files/icassp-2012.jpg" width=200> </td>
+								<td>
+									<b>"Clustering and Synchronizing Multi-Camera Video via Landmark Cross-Correlation"
+									</b>
+									<br>
+									<a href="#">N. J. Bryan</a>,
+									<a href="http://www.cs.illinois.edu/~paris/">P. Smaragdis</a>,
+									<a href="https://ccrma.stanford.edu/~gautham">G. J. Mysore</a>
+									<br>
+									<i>IEEE International Conference on Acoustics, Speech, and Signal Processing
+										(ICASSP)</i>, 2012.
+									<br>
+									(<a href="http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=6288396">paper</a> |
+									<a href="research/icassp2012-poster.pdf">poster</a>
+									|
+									<a
+										href="research/icassp2012-multicamera.pdf">pre-print</a>
+									|
+									<a href="research/mcs-slides.pdf">slides</a>,
+									<a href="http://tinyurl.com/multicamera">Adobe MAX</a>)
+
+								</td>
+							</tr>
+
+
+
+							<!------------------------------------------------------------------------------------>
+							<tr>
+								<td width=256 align="center"> <img src="index_files/ismir-2011.png" width=175
+										height=130> </td>
+								<td>
+									<b>"Musical Influence Network Analysis and Rank of Sampled-Based Music."</b>
+									<br>
+									<a href="#">N. J. Bryan</a>,
+									<a href="http://ccrma.stanford.edu/~ge">G. Wang</a>
+									<br>
+									<i>International Society for Music Information Retrieval Conference (ISMIR)</i>,
+									2011.
+									<br>
+									(<a href="research/influence.pdf">paper</a> |
+									<a href="http://www.whosampled.com/">whosampled</a> |
+									<a href="research/ismir-2011-slides.pdf">slides</a>)
+									<br>
+								</td>
+							</tr>
+
+
+
+							<!------------------------------------------------------------------------------------>
+							<tr>
+								<td width=256 align="center"> <img src="index_files/nime-2011.png" width=175 height=120>
+								</td>
+								<td>
+									<b>"Two Turntables and a Mobile Phone."</b>
+									<br>
+									<a href="#">N. J. Bryan</a>,
+									<a href="http://ccrma.stanford.edu/~ge">G. Wang</a>
+									<br>
+									<i>International Conference on New Interfaces for Musical Expression (NIME)</i>,
+									2011.
+									<br>
+									(<a
+										href="research/turntable/NIME2011-turntable.pdf">paper</a>
+									|
+									<a href="research/NIME-2011-Slides.pdf">slides</a> |
+									<a href="research/turntable/">web</a>)
+									<br>
+								</td>
+							</tr>
+
+
+
+							<!------------------------------------------------------------------------------------>
+							<tr>
+								<td width=256 align="center"> <img src="index_files/ga.jpg" width=175 height=100> </td>
+								<td>
+									<b>"Instinct-Based Mating in Genetic Algorithms Applied to the Tuning of 1-NN
+										Classifiers." </b>
+									<br>
+									<a
+										href="http://scholarlyrepository.miami.edu/cgi/viewcontent.cgi?article=1744&context=oa_dissertations">T.
+										Quirino</a>,
+									<a href="http://ece.miami.edu/people/indextest.php?id=54">M. Kubat</a>,
+									<a href="#">N. J. Bryan</a>
+									<br>
+									<i>IEEE Transactions on Knowledge and Data Engineering (TKDE)</i>, December, 2010.
+									<br>
+									(<a href="http://doi.ieeecomputersociety.org/10.1109/TKDE.2009.211">paper</a>)
+
+								</td>
+							</tr>
+
+							<!------------------------------------------------------------------------------------>
+							<tr>
+								<td width=256 align="center"> <img src="index_files/AES129-extension.png" width=250
+										height=120> </td>
+								<td>
+									<b>"Methods For Extending Room Impulse Responses Beyond Their Noise Floor." </b>
+									<br>
+									<a href="#">N. J. Bryan</a>,
+									<a href="https://ccrma.stanford.edu/people/jonathan-abel">J. S. Abel</a>
+									<br>
+									<i>Audio Engineering Society Convention (AES)</i>, 2010.
+									<br>
+									(<a href="research/AES129_IRExtension.pdf">paper</a>
+									|
+									<a
+										href="research/AES129_Extension_Slides.pdf">slides</a>
+									|
+									<a href="http://iconsofsound.stanford.edu/">web</a>)
+
+								</td>
+							</tr>
+
+
+							<!------------------------------------------------------------------------------------>
+							<tr>
+								<td width=256 align="center"> <img src="index_files/AES129-clock.png" width=250
+										height=120> </td>
+								<td>
+									<b>"Impulse Response Measurements in the Presence of Clock Drift."</b>
+									<br>
+									<a href="#">N. J. Bryan</a>,
+									<a href="https://ccrma.stanford.edu/~kolar/">M. A. Kolar</a>,
+									<a href="https://ccrma.stanford.edu/people/jonathan-abel">J. S. Abel</a>
+									<br>
+									<i>Audio Engineering Society Convention (AES)</i>, 2010.
+									<br>
+									(<a href="research/AES129_ClockDrift.pdf">paper</a>
+									|
+									<a
+										href="research/AES129_Clock_Slides.pdf">slides</a>
+									|
+									<a href="https://ccrma.stanford.edu/groups/chavin/index.html">web</a>)
+
+								</td>
+							</tr>
+
+
+							<!------------------------------------------------------------------------------------>
+							<tr>
+								<td width=256 align="center"> <img src="index_files/AES129-balloon.png" width=250
+										height=120> </td>
+								<td>
+									<b>"Estimating Room Impulse Responses from Recorded Balloon Pops."</b>
+									<br>
+									<a href="https://ccrma.stanford.edu/people/jonathan-abel">J. S. Abel</a>
+									<a href="#">N. J. Bryan</a>,
+									<a href="https://ccrma.stanford.edu/groups/chavin/team.html#patty">P. Huang</a>,
+									<a href="https://ccrma.stanford.edu/~kolar/">M. A. Kolar</a>,
+									<a href="http://art.stanford.edu/profile/Bissera+Pentcheva/">B. Pentcheva</a>,
+									<br>
+									<i>Audio Engineering Society Convention (AES)</i>, 2010.
+									<br>
+									(<a href="research/AES129_Balloon.pdf">paper</a> |
+									<a
+										href="research/AES129_Balloon_Slides.pdf">slides</a>
+									|
+									<a href="http://iconsofsound.stanford.edu/">web</a>)
+								</td>
+							</tr>
+
+							<!------------------------------------------------------------------------------------>
+							<tr>
+								<td width=256 align="center"> <img src="index_files/daxf-2010.png" width=200 height=120>
+								</td>
+								<td>
+									<b>"Approximating Measured Reverberation Using A Hybrid Fixed/Switched Convolution
+										Structure."</b>
+									<br>
+									<a href="https://ccrma.stanford.edu/~keunsup">K. Lee</a>,
+									<a href="#">N. J. Bryan</a>,
+									<a href="https://ccrma.stanford.edu/people/jonathan-abel">J. S. Abel</a>
+									<br>
+									<i>International Conference on Digital Audio Effects (DAFX)</i>, 2010.
+									<br>
+									(<a
+										href="http://dafx10.iem.at/proceedings/papers/LeeBryanAbel_DAFx10_P88.pdf">paper</a>
+									| <a href="https://ccrma.stanford.edu/~keunsup/approx_reverb.html">web</a>)
+								</td>
+							</tr>
+
+
+							<!------------------------------------------------------------------------------------>
+							<tr>
+								<td width=256 align="center"> <img src="index_files/nime-2010a.png" width=175
+										height=150> </td>
+								<td>
+									<b>"MoMu: A Mobile Music Toolkit."</b>
+									<br>
+									<a href="#">N. J. Bryan</a>,
+									<a href="http://ccrma.stanford.edu/~jorgeh">J. Herrera</a>,
+									<a href="http://ccrma.stanford.edu/~jieun5">J. Oh</a>,
+									<a href="http://ccrma.stanford.edu/~ge">G. Wang</a>
+									<br>
+									<i>International Conference on New Interfaces for Musical Expression (NIME)</i>,
+									2010.
+									<br>
+									(<a href="research/momu_nime2010.pdf">paper</a> | <a
+										href="http://momu.stanford.edu/toolkit/">web</a>
+									| <a href="research/speakerHands/">speaker hands</a>
+									|
+									<a href="research/NIME-2010-momu.pdf">slides</a>)
+									<br>
+								</td>
+							</tr>
+
+
+							<!------------------------------------------------------------------------------------>
+							<tr>
+								<td width=256 align="center"> <img src="index_files/nime-2010b.png" width=230
+										height=130> </td>
+								<td>
+									<b>"Evolving The Mobile Phone Orchestra."</b>
+									<br>
+									<a href="http://ccrma.stanford.edu/~jieun5">J. Oh</a>,
+									<a href="http://ccrma.stanford.edu/~jorgeh">J. Herrera</a>,
+									<a href="#">N. J. Bryan</a>,
+									<a href="https://ccrma.stanford.edu/~lukedahl/">L. Dahl</a>,
+									<a href="http://ccrma.stanford.edu/~ge">G. Wang</a>
+									<br>
+									<i>International Conference on New Interfaces for Musical Expression (NIME)</i>,
+									2010.
+									<br>
+									(<a href="research/mopho-evo_nime2010.pdf">paper</a>
+									|
+									<a href="research/speakerHands/">speaker hands</a>)
+									<br>
+								</td>
+							</tr>
+
+
+							<!------------------------------------------------------------------------------------>
+							<tr>
+								<td width=256 align="center"> <img src="index_files/AES127-array.png" width=230
+										height=175> </td>
+								<td>
+									<b>"A Configurable Microphone Array with Acoustically Transparent Omnidirectional
+										Elements."</b>
+									<br>
+									<a href="https://ccrma.stanford.edu/people/jonathan-abel">J. S. Abel</a>
+									<a href="#">N. J. Bryan</a>,
+									<a href="https://ccrma.stanford.edu/~travissk/faustflash/">T. Skare</a>,
+									<a href="https://ccrma.stanford.edu/~kolar/">M. A. Kolar</a>,
+									<a href="https://ccrma.stanford.edu/groups/chavin/team.html#patty">P. Huang</a>,
+									<a href="http://www.daringaudio.com/">D. Mostowfi</a>,
+									<a href="https://ccrma.stanford.edu/~jos/">J. O. Smith III</a>
+									<br>
+									<i>Audio Engineering Society Convention (AES)</i>, 2009.
+									<br>
+									(<a
+										href="research/AES127_ConfigMicArray.pdf">paper</a>
+									| <a
+										href="research/AES127_ConfigMicArray.pdf">poster</a>
+									| <a href="https://ccrma.stanford.edu/groups/chavin/index.html">web</a>)
+								</td>
+							</tr>
+
+
+							<!------------------------------------------------------------------------------------>
+							<tr>
+								<td width=256 align="center"> <img src="index_files/icmc-2009.jpg" width=230 height=170>
+								</td>
+								<td>
+									<b>"Stanford Laptop Orchestra (SLOrk)."</b>
+									<br>
+									<a href="http://ccrma.stanford.edu/~ge">G. Wang</a>
+									<a href="#">N. J. Bryan</a>,
+									<a href="http://ccrma.stanford.edu/~jieun5">J. Oh</a>,
+									<a href="https://ccrma.stanford.edu/~rob/">R. Hamilton</a>,
+
+
+									<br>
+									<i>International Computer Music Conference (ICML),</i> 2009.
+									<br>
+									(pdf: <a target="_blank"
+										href="research/slork-icmc2009.pdf">paper</a> |
+									<a href="http://slork.stanford.edu/">web</a> |
+									<a href="research/slorkSpeaker/">speakers</a>
+
+									)
+									<br>
+								</td>
+							</tr>
+							<!-- </table> -->
+					</table>
+
+
+					<br><br>
+					<hr size="2" align="left" noshade="">
+
+
+
+					<br><br><br><br>
+
+	</div> <!-- end main-container -->
+
+</body>
+
+</html>
+>>>>>>> Stashed changes
