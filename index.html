@@ -1,247 +1,79 @@
-<html>
+<html lang="en">
 
 <head>
-	<title>Nicholas (Nick) J. Bryan</title>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	
+	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<style>
-		/* Base styles */
-		body {
-			font-family: Helvetica, Arial, sans-serif;
-			margin: 0;
-			padding: 15px;
-			line-height: 1.5;
-		}
+	<title>Nicholas (Nick) J. Bryan — Head of Music AI, Adobe Research</title>
+	<meta name="description" content="Nicholas J. Bryan — Head of Music AI and Principal Scientist at Adobe Research. Research in generative AI, audio and music, and signal processing.">
+	<meta name="author" content="Nicholas J. Bryan">
+	<link rel="canonical" href="https://njb.github.io/">
 
-		/* Main container - responsive */
-		.main-container {
-			max-width: 980px;
-			margin: 0 auto;
-			width: 100%;
-		}
+	<!-- Google Search Console verification:
+	     1) Go to https://search.google.com/search-console, add property https://njb.github.io/
+	     2) Choose the "HTML tag" method and copy the content token
+	     3) Replace REPLACE_WITH_YOUR_TOKEN below and uncomment this line -->
+	<!-- <meta name="google-site-verification" content="REPLACE_WITH_YOUR_TOKEN"> -->
+	<meta name="google-site-verification" content="x07aJZkOlqtVXqvfJ8iH4le5iRMCiuxNuyCOYEB2ZRE" />
 
-		/* Header section with photo */
-		.header-section {
-			display: flex;
-			flex-wrap: wrap;
-			gap: 20px;
-			align-items: flex-start;
-		}
+	<!-- Favicon -->
+	<link rel="icon" type="image/svg+xml" href="favicon.svg">
 
-		.header-info {
-			flex: 1;
-			min-width: 280px;
-		}
+	<!-- Open Graph (Facebook, LinkedIn, etc.) -->
+	<meta property="og:type" content="profile">
+	<meta property="og:site_name" content="Nicholas J. Bryan">
+	<meta property="og:title" content="Nicholas J. Bryan — Head of Music AI, Adobe Research">
+	<meta property="og:description" content="Head of Music AI and Principal Scientist at Adobe Research. Research in generative AI, audio and music, and signal processing.">
+	<meta property="og:url" content="https://njb.github.io/">
+	<meta property="og:image" content="https://njb.github.io/index_files/og-card.png">
+	<meta property="og:image:width" content="1200">
+	<meta property="og:image:height" content="630">
+	<meta property="og:image:alt" content="Nicholas J. Bryan — Head of Music AI, Adobe Research">
 
-		.header-photo {
-			flex: 1;
-			min-width: 280px;
-			text-align: center;
-		}
+	<!-- Twitter Card -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:site" content="@NicholasJBryan">
+	<meta name="twitter:creator" content="@NicholasJBryan">
+	<meta name="twitter:title" content="Nicholas J. Bryan — Head of Music AI, Adobe Research">
+	<meta name="twitter:description" content="Head of Music AI and Principal Scientist at Adobe Research. Research in generative AI, audio and music, and signal processing.">
+	<meta name="twitter:image" content="https://njb.github.io/index_files/og-card.png">
+	<meta name="twitter:image:alt" content="Nicholas J. Bryan — Head of Music AI, Adobe Research">
 
-		.header-photo img {
-			max-width: 100%;
-			height: auto;
-		}
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="styles.css">
 
-		/* Name styling */
-		.name {
-			font-size: 2.5em;
-			font-weight: bold;
-			margin-bottom: 10px;
-		}
-
-		/* Publication entries */
-		.pub-entry {
-			display: flex;
-			flex-wrap: wrap;
-			gap: 15px;
-			margin-bottom: 25px;
-			padding-bottom: 15px;
-			border-bottom: 1px solid #eee;
-		}
-
-		.pub-media {
-			flex: 0 0 250px;
-			max-width: 100%;
-		}
-
-		.pub-details {
-			flex: 1;
-			min-width: 250px;
-		}
-
-		/* Responsive iframes (YouTube videos) */
-		.video-container {
-			position: relative;
-			width: 100%;
-			max-width: 250px;
-			padding-bottom: 56.25%; /* 16:9 aspect ratio */
-			height: 0;
-			overflow: hidden;
-		}
-
-		.video-container iframe {
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-		}
-
-		/* Responsive images in publications */
-		.pub-media img {
-			max-width: 100%;
-			height: auto;
-		}
-
-		/* Links list */
-		.links-list {
-			padding-left: 20px;
-		}
-
-		.links-list li {
-			margin-bottom: 5px;
-		}
-
-		/* Section headers */
-		h2 {
-			border-bottom: 2px solid #333;
-			padding-bottom: 5px;
-			margin-top: 30px;
-		}
-
-		/* Horizontal rule */
-		hr {
-			border: none;
-			border-top: 2px solid #333;
-			margin: 20px 0;
-		}
-
-		/* Legacy table support - make responsive */
-		table {
-			max-width: 100%;
-		}
-
-		table img {
-			max-width: 100%;
-			height: auto;
-		}
-
-		table iframe {
-			max-width: 100%;
-		}
-
-		/* Collapsible sections */
-		.collapsible {
-			background-color: rgb(211, 211, 211);
-			color: rgb(0, 0, 0);
-			cursor: pointer;
-			padding: 8px;
-			width: 10%;
-			border: none;
-			text-align: left;
-			outline: none;
-			font-size: 15px;
-		}
-
-		.active,
-		.collapsible:hover {
-			background-color: rgb(255, 255, 255);
-		}
-
-		.content {
-			padding: 0 8px;
-			max-height: 0;
-			overflow: hidden;
-			transition: max-height 0.2s ease-out;
-			background-color: #ffffff;
-		}
-
-		/* Mobile styles */
-		@media screen and (max-width: 768px) {
-			body {
-				padding: 10px;
-			}
-
-			.name {
-				font-size: 1.8em;
-			}
-
-			.header-section {
-				flex-direction: column-reverse;
-			}
-
-			.header-photo {
-				text-align: center;
-				margin-bottom: 15px;
-			}
-
-			.header-photo img {
-				max-width: 300px;
-			}
-
-			.pub-entry {
-				flex-direction: column;
-			}
-
-			.pub-media {
-				flex: 0 0 auto;
-				text-align: center;
-			}
-
-			.video-container {
-				max-width: 100%;
-				margin: 0 auto;
-			}
-
-			/* Make legacy tables stack on mobile */
-			table, tbody, tr, td {
-				display: block;
-				width: 100% !important;
-			}
-
-			td[width="256"],
-			td[width="50%"] {
-				width: 100% !important;
-				text-align: center;
-				margin-bottom: 15px;
-			}
-
-			td img {
-				max-width: 280px !important;
-			}
-
-			iframe {
-				max-width: 100% !important;
-			}
-		}
-
-		/* Small mobile */
-		@media screen and (max-width: 480px) {
-			.name {
-				font-size: 1.5em;
-			}
-
-			.header-photo img {
-				max-width: 250px;
-			}
-
-			td img {
-				max-width: 100% !important;
-			}
-		}
-	</style>
+	<!-- Structured data: schema.org Person -->
+	<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@type": "Person",
+		"name": "Nicholas J. Bryan",
+		"alternateName": "Nick Bryan",
+		"jobTitle": "Head of Music AI, Principal Scientist",
+		"worksFor": { "@type": "Organization", "name": "Adobe Research" },
+		"url": "https://njb.github.io/",
+		"image": "https://njb.github.io/index_files/head-shot.jpg",
+		"email": "njb@ieee.org",
+		"alumniOf": { "@type": "CollegeOrUniversity", "name": "Stanford University (CCRMA)" },
+		"knowsAbout": ["Generative AI", "Audio Machine Learning", "Music Generation", "Signal Processing"],
+		"sameAs": [
+			"https://scholar.google.com/citations?user=65zgjxQAAAAJ&hl=en",
+			"https://twitter.com/NicholasJBryan",
+			"https://orcid.org/0000-0003-1469-7278",
+			"https://research.adobe.com/person/nicholas-j-bryan",
+			"https://www.linkedin.com/pub/nick-bryan/22/170/940",
+			"https://github.com/njb"
+		]
+	}
+	</script>
 </head>
 
-<body bgcolor="#FFFFFF" link="#000000" vlink="#000000" alink="#000000">
+<body>
 
 	<div class="main-container">
 		<div class="header-section">
 			<div class="header-info">
-				<div class="name">Nicholas J. Bryan</div>
+				<h1 class="name">Nicholas J. Bryan</h1>
 				<p>
 					Head of Music AI<br> 
 					<a href="https://research.adobe.com/">Adobe Research</a><br>
@@ -250,63 +82,55 @@
 				</p>
 				<ul class="links-list">
 					<li><a href="cv.pdf">CV</a></li>
-					<li><a href="https://scholar.google.com/citations?user=65zgjxQAAAAJ&hl=en">Google Scholar</a></li>
+					<li><a href="https://scholar.google.com/citations?user=65zgjxQAAAAJ&hl=en">Scholar</a></li>
 					<li><a href="https://twitter.com/NicholasJBryan">Twitter</a></li>
-					<li><a href="https://orcid.org/0000-0003-1469-7278">ORCID</a></li>
-					<li><a href="https://research.adobe.com/person/nicholas-j-bryan">Official Adobe Page</a></li>
+					<!-- <li><a href="https://orcid.org/0000-0003-1469-7278">ORCID</a></li> -->
+					<li><a href="https://research.adobe.com/person/nicholas-j-bryan">Adobe Research</a></li>
 					<li><a href="https://www.linkedin.com/pub/nick-bryan/22/170/940">LinkedIn</a></li>
 					<li><a href="https://github.com/njb">GitHub</a></li>
-					<li><a href="http://isse.sourceforge.net/">Sourceforge</a></li>
 				</ul>
 			</div>
 			<div class="header-photo">
 				<img src="index_files/head-shot.jpg" alt="Nicholas J. Bryan">
 			</div>
 		</div>
-					<p>
-					</p>
-					<hr size="2" align="left" noshade="">
-					<p>
 
-						<font face="helvetica, ariel, &#39;sans serif&#39;">
-							<b>About</b>: I am <a href="https://research.adobe.com/person/nicholas-j-bryan"
-								border="0">Head of the Music AI group</a> at Adobe Research. My research interests include 
-								audio and music, generative AI, and signal processing.
-							I received my PhD and MA from <a href="http://ccrma.stanford.edu">CCRMA</a>,
-							<a href="http://www.stanford.edu">Stanford University</a> and MS in <a
-								href="http://ee.stanford.edu">Electrical Eng.</a>, also from Stanford. Before that,
-							I received my Bachelor of Music and BS in Electrical Eng. with <i>summa cum laude</i>,
-							general honors, and departmental honors at the U. of Miami-FL.
-							I have received 2 best paper awards, 1 AES Graduate Design Gold award, 1 best reviewer award, and 1 best paper finalist acknowledgement. 
-							I was general co-chair of <a
-							href="http://waspaa.com/organizing-committee/">WASPAA</a> 2023, a 2x elected member of the
-							<a href="https://signalprocessingsociety.org/community-involvement/audio-and-acoustic-signal-processing/aasp-tc-home">IEEE AASP TC</a>, an IEEE Senior Member,
-							and am an Adobe distinguished inventor. I've also been a musician since childhood, <a href="https://en.wikipedia.org/wiki/Wolf_Rounds">performed at Carnegie Hall</a>, 
-							and have been on the <a href="https://www.nytimes.com/2009/12/05/technology/05orchestra.html">front-page</a> of the New York Times.
-					</p>
-					<hr size="2" align="left" noshade="">
+		<div class="vision">
+			<div class="vision-label">Research Vision</div>
+			<p class="vision-text">
+				I develop generative AI for music and audio, focused on human&ndash;AI co-creation: controllable, fast models that let people control and edit media, rather than relying on one-shot text prompts.
+			</p>
+		</div>
+
+		<div class="about">
+			<h2>About</h2>
+			<p class="about-text">
+				I am <a href="https://research.adobe.com/person/nicholas-j-bryan">Head of the Music AI</a> and Principal Scientist at Adobe Research.
+				I received my PhD and MA from <a href="http://ccrma.stanford.edu">CCRMA</a>,
+				<a href="http://www.stanford.edu">Stanford University</a> and MS in <a href="http://ee.stanford.edu">Electrical Eng.</a>, also from Stanford. Before that,
+				I received my Bachelor of Music and BS in Electrical Eng. with <i>summa cum laude</i>,
+				general honors, and departmental honors at the U. of Miami-FL.
+				I have received 2 best paper awards, 1 AES Graduate Design Gold award, 1 best reviewer award, and 1 best paper finalist acknowledgement.
+				I was general co-chair of <a href="http://waspaa.com/organizing-committee/">WASPAA</a> 2023, a 2x elected member of the
+				<a href="https://signalprocessingsociety.org/community-involvement/audio-and-acoustic-signal-processing/aasp-tc-home">IEEE AASP TC</a>, an IEEE Senior Member,
+				and am an Adobe distinguished inventor. I've also been a musician since childhood, <a href="https://en.wikipedia.org/wiki/Wolf_Rounds">performed at Carnegie Hall</a>,
+				and have been on the <a href="https://www.nytimes.com/2009/12/05/technology/05orchestra.html">front-page</a> of the New York Times.
+			</p>
+		</div>
+					<hr>
 					<h2>News</h2>
-						<b>[Upcoming!]</b> Invited Talk Design@Large UCSD 04/29/2026 w/<a href="https://www.orlylobel.com/">Orly Lobel</a> and <a href="https://yadegari.org/">Shahrokh Yadegari</a>, <a href="https://www.eventbrite.com/e/creative-ai-music-authorship-and-algorithmic-culture-tickets-1984311342642">EventBrite Link!</a><br>
-					    <b>[03/2026]</b> "V2M-Zero: Zero-Pair Time-Aligned Video-to-Music Generation" arXiv <a href="https://arxiv.org/abs/2603.11042">arXiv</a><br>
-						<b>[02/2026]</b> "Rethinking Music Captioning with Music Metadata LLMs" accepted to ICASSP 2026 <a href="https://arxiv.org/abs/2602.03023">arXiv</a><br>
-						<b>[02/2026]</b> "A Generative-First Neural Audio Autoencoder" accepted to ICASSP 2026 <a href="https://arxiv.org/abs/2602.15749">arXiv</a><br>
-						<b>[02/2026]</b> "Stemphonic: All-at-once Flexible Multi-stem Music Generation" accepted to ICASSP 2026 <a href="https://arxiv.org/abs/2602.09891">arXiv</a><br>
+					<div class="news">
+						<b>[05/2026]</b> Invited Talk at Conversational AI Reading Group at Mila <a href="https://youtu.be/kjuTpV6ffBs?si=NJa_RZ4fIHDt6ryU">The Grand Design Challenge of Music GenAI</a><br>
+					    <b>[05/2026]</b> "V2M-Zero: Zero-Pair Time-Aligned Video-to-Music Generation" <a href="https://arxiv.org/abs/2603.11042">arXiv</a><br>
+						<b>[05/2026]</b> "Rethinking Music Captioning with Music Metadata LLMs" ICASSP 2026 <a href="https://arxiv.org/abs/2602.03023">arXiv</a><br>
+						<b>[05/2026]</b> "A Generative-First Neural Audio Autoencoder" ICASSP 2026 <a href="https://arxiv.org/abs/2602.15749">arXiv</a><br>
+						<b>[05/2026]</b> "Stemphonic: All-at-once Flexible Multi-stem Music Generation" ICASSP 2026 <a href="https://arxiv.org/abs/2602.09891">arXiv</a><br>
+						<b>[04/2026]</b> Invited Talk Design@Large UCSD  w/<a href="https://www.orlylobel.com/">Orly Lobel</a> and <a href="https://yadegari.org/">Shahrokh Yadegari</a>, <a href="https://www.eventbrite.com/e/creative-ai-music-authorship-and-algorithmic-culture-tickets-1984311342642">EventBrite Link!</a><br>
 						<b>[02/2026]</b> "TAC: Timestamped Audio Captioning" arXiv <a href="https://arxiv.org/abs/2602.15766">arXiv</a><br>
 						<b>[10/2025]</b> Adobe Firefly Generate Soundtrack Released! <a href="https://firefly.adobe.com/generate/soundtrack">web</a><br>
-						<b>[10/2025]</b> New TMLR journal paper! DRAGON: Distributional Rewards Optimize Diffusion Generative Models <a href="https://arxiv.org/abs/2504.15217">arXiv</a>, <a href="https://ml-dragon.github.io/web/">web</a>, <a href="https://youtu.be/DEQnEP737gw?feature=shared">video</a><br>
+						<b>[10/2025]</b> TMLR journal paper! DRAGON: Distributional Rewards Optimize Diffusion Generative Models <a href="https://arxiv.org/abs/2504.15217">arXiv</a>, <a href="https://ml-dragon.github.io/web/">web</a>, <a href="https://youtu.be/DEQnEP737gw?feature=shared">video</a><br>
 						<b>[04/2025]</b> "Beyond Text to Music" Keynote Talk at ICASSP 2025 <a href="https://sites.google.com/view/genda2025">GenDA</a> Workshop. <a href="research/ICASSP_2025_GenDA_Workshhop_Keynote_Beyond_Text_to_Music.pdf">slides</a><br>
-						<b>[02/2025]</b> "Presto! Distilling Steps and Layers for Accelerating Music Generation" accepted to ICLR (Spotlight, top 5%) <a href="https://presto-music.github.io/web/">web</a>.<br>
-						<b>[11/2024]</b> ISMIR 2024 x Adobe Industry Panel Talk.<br>
-						<b>[06/2024]</b> "DITTO-2: Distilled Diffusion Inference-Time T-Optimization for Music Generation" accepted to <a href="https://ismir2024.ismir.net/">ISMIR</a> 2024.<br>
-						<b>[06/2024]</b> "MusicHiFi: Fast High-Fidelity Stereo Vocoding" accepted to <a href="https://signalprocessingsociety.org/publications-resources/ieee-signal-processing-letters">IEEE SPL</a>.
-							<a href="https://arxiv.org/abs/2403.10493">arXiv</a> | <a href="https://musichifi.github.io/web/">web</a> | <a href="https://www.youtube.com/watch?v=iytPC_6OsiQ">video</a><br>
-						<b>[05/2024]</b> "DITTO: Diffusion Inference-time T-Optimization for Music Generation" accepted to <a href="https://icml.cc/">ICML</a> (oral, top 1.5%).
-							<a href="https://arxiv.org/abs/2401.12179">arXiv</a> | <a href="https://ditto-music.github.io/web/">web</a> | <a href="https://youtu.be/QVr-S-DyccU?si=Z9pfHg86GqldDeR2">video</a><br>
-						<b>[04/2024]</b> "Music ControlNet: Multiple Time-varying Controls for Music Generation" accepted to <a href="https://signalprocessingsociety.org/publications-resources/ieeeacm-transactions-audio-speech-and-language-processing">IEEE TASLP</a>.
-						<a href="https://arxiv.org/abs/2311.07069">arXiv</a> | <a href="https://musiccontrolnet.github.io/web/">web</a> | <a href="https://youtu.be/QVr-S-DyccU?si=Z9pfHg86GqldDeR2">video</a><br>
-						<b>[02/2024]</b> <a href="https://blog.adobe.com/en/publish/2024/02/28/adobe-research-audio-creation-editing">Project Music GenAI Control</a> Adobe News.<br>
-						<b>[10/2023]</b> IEEE <a href="https://waspaa.com/organizing-committee/">WASPAA 2023</a> General Co-Chair (w/<a href="https://saige.sice.indiana.edu">Minje Kim</a>).<br>
-
+					</div>
 
 					<script>
 						var coll = document.getElementsByClassName("collapsible");
@@ -328,18 +152,17 @@
 
 
 					</p>
-					<hr size="2" align="left" noshade="">
+					<hr>
 
 					<h2>Adobe Internships</h2>
-					For current students, I offer research internships at Adobe Research in San Francisco, CA.
-					Internships are typically during the summer months and for graduate students studying audio/music
-					signal processing, machine learning, or related field. If you are interested, please send me an
-					email with your CV and research interests in October-December before the given summer. My Adobe
-					webpage is <a href="https://research.adobe.com/person/nicholas-j-bryan">here</a>.
-					<!-- <hr size="2" align="left" noshade=""> -->
-
+					<p class="section-text">
+						For current students, I offer research internships at Adobe Research in San Francisco, CA.
+						Internships are typically during the summer months and for graduate students studying audio/music
+						signal processing, machine learning, or related field. If you are interested, please send me an
+						email with your CV and research interests in October-December before the given summer. My Adobe
+						webpage is <a href="https://research.adobe.com/person/nicholas-j-bryan">here</a>.
 					</p>
-					<hr size="2" align="left" noshade="">
+					<hr>
 
 					<h2>Publications </h2>
 
@@ -371,7 +194,7 @@
 
 							<tr>
 								<td width=256 align="center">
-									<img src="index_files/metadatallms.png" width=250 height=150> <br>
+									<img alt="Rethinking Music Captioning with Music Metadata LLMs" src="index_files/metadatallms.png" width=250 height=150> <br>
 								</td>
 								<td>
 									<a id="MetadataLLMs"><b>"Rethinking Music Captioning with Music Metadata LLMs"</b></a>
@@ -428,7 +251,7 @@
 							</tr>
 							<tr>
 								<td width=256 align="center">
-									<img src="index_files/metadatallms.png" width=250 height=150> <br>
+									<img alt="TAC: Timestamped Audio Captioning" src="index_files/tac.png" width=250 height=150> <br>
 								</td>
 								<td>
 									<a id="TAC"><b>"TAC: Timestamped Audio Captioning"</b></a>
@@ -537,7 +360,7 @@
 
 							<tr>
 								<td width=256 align="center">
-									<img src="index_files/ditto-2.png" width=250 height=150>
+									<img alt="DITTO-2: Distilled Diffusion Inference-Time T-Optimization for Music Generation" src="index_files/ditto-2.png" width=250 height=150>
 								</td>
 								<td>
 									<a id="DITTO2_ISMIR"><b>"DITTO-2: Distilled Diffusion Inference-Time T-Optimization for Music Generation"</b></a>
@@ -638,7 +461,7 @@
 
 							<!------------------------------------------------------------------------------------>
 							<tr>
-								<td width=256 align="center"><img src="index_files/IWAENC2022_hometa.png" width=250
+								<td width=256 align="center"><img alt="Meta-learning for Adaptive Filters with Higher-order Frequency Dependencies." src="index_files/IWAENC2022_hometa.png" width=250
 										height=120></td>
 								<td>
 									<a id="IWAENC_2021_hometa"><b>"Meta-learning for Adaptive Filters with Higher-order
@@ -661,7 +484,7 @@
 
 							<!------------------------------------------------------------------------------------>
 							<tr>
-								<td width=256 align="center"><img src="index_files/ICASSP_2022_remix.png" width=250
+								<td width=256 align="center"><img alt="Don&#x27;t Separate, Learn to Remix: End-to-End Neural Remixing with Joint Optimization." src="index_files/ICASSP_2022_remix.png" width=250
 										height=120></td>
 								<td>
 									<a id="ICASSP2021_remix"><b>"Don't Separate, Learn to Remix: End-to-End Neural
@@ -684,7 +507,7 @@
 
 							<!------------------------------------------------------------------------------------>
 							<tr>
-								<td width=256 align="center"><img src="index_files/ISMIR_2021_emotion.jpeg" width=250
+								<td width=256 align="center"><img alt="Emotion Embedding Spaces for Matching Music to Stories." src="index_files/ISMIR_2021_emotion.jpeg" width=250
 										height=120></td>
 								<td>
 									<a id="ISMIR_2021_Award"><b>"Emotion Embedding Spaces for Matching Music to
@@ -709,7 +532,7 @@
 
 							<!------------------------------------------------------------------------------------>
 							<tr>
-								<td width=256 align="center"><img src="index_files/ISMIR_2021_sections.png" width=250
+								<td width=256 align="center"><img alt="Deep Embeddings and Section Fusion Improve Music Segmentation." src="index_files/ISMIR_2021_sections.png" width=250
 										height=120></td>
 								<td>
 									<a id="ISMIR_2021_Award"><b>"Deep Embeddings and Section Fusion Improve Music
@@ -731,7 +554,7 @@
 
 							<!------------------------------------------------------------------------------------>
 							<tr>
-								<td width=256 align="center"><img src="index_files/waspaa_2021_rethinking_few_shot.png"
+								<td width=256 align="center"><img alt="Who Calls the Shots? Rethinking Few-Shot Learning for Audio." src="index_files/waspaa_2021_rethinking_few_shot.png"
 										width=250 height=120></td>
 								<td>
 									<a id="WASPAA_2021_Award"><b>"Who Calls the Shots? Rethinking Few-Shot Learning for
@@ -759,7 +582,7 @@
 
 							<!------------------------------------------------------------------------------------>
 							<tr>
-								<td width=256 align="center"><img src="index_files/waspaa_2021_auto_dsp_aec.png"
+								<td width=256 align="center"><img alt="Auto-DSP: Learning to Optimize Acoustic Echo Cancellers." src="index_files/waspaa_2021_auto_dsp_aec.png"
 										width=250 height=120></td>
 								<td>
 									<b>"Auto-DSP: Learning to Optimize Acoustic Echo Cancellers."</b>
@@ -817,7 +640,7 @@
 
 							<!------------------------------------------------------------------------------------>
 							<tr>
-								<td width=256 align="center"><img src="index_files/few-shot_icassp_2021.png" width=250
+								<td width=256 align="center"><img alt="Few-shot Continual Learning for Audio Classification." src="index_files/few-shot_icassp_2021.png" width=250
 										height=120></td>
 								<td>
 									<b>"Few-shot Continual Learning for Audio Classification."</b>
@@ -842,7 +665,7 @@
 
 							<!------------------------------------------------------------------------------------>
 							<tr>
-								<td width=256 align="center"><img src="index_files/prosody_icassp_2021.png" width=250
+								<td width=256 align="center"><img alt="Context-aware Prosody Correction for Text-based Speech Editing." src="index_files/prosody_icassp_2021.png" width=250
 										height=120></td>
 								<td>
 									<b>"Context-aware Prosody Correction for Text-based Speech Editing."</b>
@@ -869,7 +692,7 @@
 
 							<!------------------------------------------------------------------------------------>
 							<tr>
-								<td width=256 align="center"><img src="index_files/interspeech2020-jnd-metric.png"
+								<td width=256 align="center"><img alt="A Differentiable Perceptual Audio Metric Learned from Just Noticeable Differences." src="index_files/interspeech2020-jnd-metric.png"
 										width=250 height=120></td>
 								<td>
 									<a id="Interspeech_2020_Award"><b>"A Differentiable Perceptual Audio Metric Learned
@@ -897,7 +720,7 @@
 
 							<!------------------------------------------------------------------------------------>
 							<tr>
-								<td width=256 align="center"><img
+								<td width=256 align="center"><img alt="Controllable Neural Prosody Synthesis."
 										src="index_files/interspeech2020-controllable-neural-prosody-synthesis.png"
 										width=250 height=120></td>
 								<td>
@@ -924,7 +747,7 @@
 
 							<!------------------------------------------------------------------------------------>
 							<tr>
-								<td width=256 align="center"><img
+								<td width=256 align="center"><img alt="Metric Learning vs Classification for Disentangled Music Representation Learning."
 										src="index_files/ismir2020-metric-v-classification.png" width=220 height=150>
 								</td>
 								<td>
@@ -950,7 +773,7 @@
 
 							<!------------------------------------------------------------------------------------>
 							<tr>
-								<td width=256 align="center"><img src="index_files/ismir2020-few-shot-drum.png"
+								<td width=256 align="center"><img alt="Few-shot Drum Transcription in Polyphonic Music." src="index_files/ismir2020-few-shot-drum.png"
 										width=250 height=120></td>
 								<td>
 									<b>"Few-shot Drum Transcription in Polyphonic Music." </b>
@@ -973,7 +796,7 @@
 
 							<!------------------------------------------------------------------------------------>
 							<tr>
-								<td width=256 align="center"><img src="index_files/icassp2020_music_sim.png" width=250
+								<td width=256 align="center"><img alt="Disentangled Multidimensional Metric Learning For Music Similarity." src="index_files/icassp2020_music_sim.png" width=250
 										height=120></td>
 								<td>
 									<b>"Disentangled Multidimensional Metric Learning For Music Similarity." </b>
@@ -1001,7 +824,7 @@
 
 							<!------------------------------------------------------------------------------------>
 							<tr>
-								<td width=256 align="center"><img src="index_files/icassp2020_style_transfer.png"
+								<td width=256 align="center"><img alt="One-Shot Parametric Audio Production Style Transfer With Application to Frequency Equalization." src="index_files/icassp2020_style_transfer.png"
 										width=250 height=100></td>
 								<td>
 									<b>"One-Shot Parametric Audio Production Style Transfer With Application to
@@ -1027,7 +850,7 @@
 
 							<!------------------------------------------------------------------------------------>
 							<tr>
-								<td width=256 align="center"><img src="index_files/icassp2020_few_shot_sed.png"
+								<td width=256 align="center"><img alt="Few-Shot Sound Event Detection." src="index_files/icassp2020_few_shot_sed.png"
 										width=250 height=130></td>
 								<td>
 									<b>"Few-Shot Sound Event Detection." </b>
@@ -1082,7 +905,7 @@
 
 							<!------------------------------------------------------------------------------------>
 							<tr>
-								<td width=256 align="center"><img src="index_files/ieeevr2020_deep_acoustic.png"
+								<td width=256 align="center"><img alt="Scene-Aware Audio Rendering via Deep Acoustic Analysis." src="index_files/ieeevr2020_deep_acoustic.png"
 										width=250 height=120></td>
 								<td>
 									<b>"Scene-Aware Audio Rendering via Deep Acoustic Analysis." </b>
@@ -1111,7 +934,7 @@
 
 							<!------------------------------------------------------------------------------------>
 							<tr>
-								<td width=256 align="center"><img src="index_files/chi2014.png" width=250 height=120>
+								<td width=256 align="center"><img alt="ISSE: An Interactive Source Separation Editor." src="index_files/chi2014.png" width=250 height=120>
 								</td>
 								<td>
 									<b>"ISSE: An Interactive Source Separation Editor." </b>
@@ -1173,7 +996,7 @@
 
 							<!------------------------------------------------------------------------------------>
 							<tr>
-								<td width=256 align="center"> <img src="index_files/ismir-2013.png" width=250
+								<td width=256 align="center"> <img alt="Source Separation of Polyphonic Music With Interactive User-Feedback on a Piano Roll Display." src="index_files/ismir-2013.png" width=250
 										height=120> </td>
 								<td>
 									<b>"Source Separation of Polyphonic Music With Interactive User-Feedback on a Piano
@@ -1194,7 +1017,7 @@
 
 							<!------------------------------------------------------------------------------------>
 							<tr>
-								<td width=256 align="center"> <img src="index_files/icml2013-pic.jpg" width=250
+								<td width=256 align="center"> <img alt="An Efficient Posterior Regularized Latent Variable Model for Interactive Sound Source Separation." src="index_files/icml2013-pic.jpg" width=250
 										height=120> </td>
 								<td>
 									<b>"An Efficient Posterior Regularized Latent Variable Model for Interactive Sound
@@ -1221,7 +1044,7 @@
 
 							<!------------------------------------------------------------------------------------>
 							<tr>
-								<td width=256 align="center"> <img src="index_files/icassp2013-pic.jpg" width=150
+								<td width=256 align="center"> <img alt="Interactive Refinement of Supervised and Semi-Supervised Sound Source Separation Estimates." src="index_files/icassp2013-pic.jpg" width=150
 										height=120></td>
 								<td>
 									<b>"Interactive Refinement of Supervised and Semi-Supervised Sound Source Separation
@@ -1245,7 +1068,7 @@
 
 							<!------------------------------------------------------------------------------------>
 							<tr>
-								<td width=256 align="center"> <img src="index_files/iui-pic.jpg" width=200 height=120>
+								<td width=256 align="center"> <img alt="Interactive User-Feedback for Sound Source Separation." src="index_files/iui-pic.jpg" width=200 height=120>
 								</td>
 								<td>
 									<b>"Interactive User-Feedback for Sound Source Separation." </b>
@@ -1266,7 +1089,7 @@
 
 							<!------------------------------------------------------------------------------------>
 							<tr>
-								<td width=256 align="center"> <img src="index_files/dafx-2012.jpg" width=200> </td>
+								<td width=256 align="center"> <img alt="User-Guided Variable-Rate Time-Stretching Via Stiffness Control." src="index_files/dafx-2012.jpg" width=200> </td>
 								<td>
 									<b>"User-Guided Variable-Rate Time-Stretching Via Stiffness Control."</b>
 									<br>
@@ -1290,7 +1113,7 @@
 
 							<!------------------------------------------------------------------------------------>
 							<tr>
-								<td width=256 align="center"> <img src="index_files/icassp-2012.jpg" width=200> </td>
+								<td width=256 align="center"> <img alt="Clustering and Synchronizing Multi-Camera Video via Landmark Cross-Correlation" src="index_files/icassp-2012.jpg" width=200> </td>
 								<td>
 									<b>"Clustering and Synchronizing Multi-Camera Video via Landmark Cross-Correlation"
 									</b>
@@ -1318,7 +1141,7 @@
 
 							<!------------------------------------------------------------------------------------>
 							<tr>
-								<td width=256 align="center"> <img src="index_files/ismir-2011.png" width=175
+								<td width=256 align="center"> <img alt="Musical Influence Network Analysis and Rank of Sampled-Based Music." src="index_files/ismir-2011.png" width=175
 										height=130> </td>
 								<td>
 									<b>"Musical Influence Network Analysis and Rank of Sampled-Based Music."</b>
@@ -1340,7 +1163,7 @@
 
 							<!------------------------------------------------------------------------------------>
 							<tr>
-								<td width=256 align="center"> <img src="index_files/nime-2011.png" width=175 height=120>
+								<td width=256 align="center"> <img alt="Two Turntables and a Mobile Phone." src="index_files/nime-2011.png" width=175 height=120>
 								</td>
 								<td>
 									<b>"Two Turntables and a Mobile Phone."</b>
@@ -1364,7 +1187,7 @@
 
 							<!------------------------------------------------------------------------------------>
 							<tr>
-								<td width=256 align="center"> <img src="index_files/ga.jpg" width=175 height=100> </td>
+								<td width=256 align="center"> <img alt="Instinct-Based Mating in Genetic Algorithms Applied to the Tuning of 1-NN Classifiers." src="index_files/ga.jpg" width=175 height=100> </td>
 								<td>
 									<b>"Instinct-Based Mating in Genetic Algorithms Applied to the Tuning of 1-NN
 										Classifiers." </b>
@@ -1384,7 +1207,7 @@
 
 							<!------------------------------------------------------------------------------------>
 							<tr>
-								<td width=256 align="center"> <img src="index_files/AES129-extension.png" width=250
+								<td width=256 align="center"> <img alt="Methods For Extending Room Impulse Responses Beyond Their Noise Floor." src="index_files/AES129-extension.png" width=250
 										height=120> </td>
 								<td>
 									<b>"Methods For Extending Room Impulse Responses Beyond Their Noise Floor." </b>
@@ -1407,7 +1230,7 @@
 
 							<!------------------------------------------------------------------------------------>
 							<tr>
-								<td width=256 align="center"> <img src="index_files/AES129-clock.png" width=250
+								<td width=256 align="center"> <img alt="Impulse Response Measurements in the Presence of Clock Drift." src="index_files/AES129-clock.png" width=250
 										height=120> </td>
 								<td>
 									<b>"Impulse Response Measurements in the Presence of Clock Drift."</b>
@@ -1431,7 +1254,7 @@
 
 							<!------------------------------------------------------------------------------------>
 							<tr>
-								<td width=256 align="center"> <img src="index_files/AES129-balloon.png" width=250
+								<td width=256 align="center"> <img alt="Estimating Room Impulse Responses from Recorded Balloon Pops." src="index_files/AES129-balloon.png" width=250
 										height=120> </td>
 								<td>
 									<b>"Estimating Room Impulse Responses from Recorded Balloon Pops."</b>
@@ -1454,7 +1277,7 @@
 
 							<!------------------------------------------------------------------------------------>
 							<tr>
-								<td width=256 align="center"> <img src="index_files/daxf-2010.png" width=200 height=120>
+								<td width=256 align="center"> <img alt="Approximating Measured Reverberation Using A Hybrid Fixed/Switched Convolution Structure." src="index_files/daxf-2010.png" width=200 height=120>
 								</td>
 								<td>
 									<b>"Approximating Measured Reverberation Using A Hybrid Fixed/Switched Convolution
@@ -1475,7 +1298,7 @@
 
 							<!------------------------------------------------------------------------------------>
 							<tr>
-								<td width=256 align="center"> <img src="index_files/nime-2010a.png" width=175
+								<td width=256 align="center"> <img alt="MoMu: A Mobile Music Toolkit." src="index_files/nime-2010a.png" width=175
 										height=150> </td>
 								<td>
 									<b>"MoMu: A Mobile Music Toolkit."</b>
@@ -1500,7 +1323,7 @@
 
 							<!------------------------------------------------------------------------------------>
 							<tr>
-								<td width=256 align="center"> <img src="index_files/nime-2010b.png" width=230
+								<td width=256 align="center"> <img alt="Evolving The Mobile Phone Orchestra." src="index_files/nime-2010b.png" width=230
 										height=130> </td>
 								<td>
 									<b>"Evolving The Mobile Phone Orchestra."</b>
@@ -1524,7 +1347,7 @@
 
 							<!------------------------------------------------------------------------------------>
 							<tr>
-								<td width=256 align="center"> <img src="index_files/AES127-array.png" width=230
+								<td width=256 align="center"> <img alt="A Configurable Microphone Array with Acoustically Transparent Omnidirectional Elements." src="index_files/AES127-array.png" width=230
 										height=175> </td>
 								<td>
 									<b>"A Configurable Microphone Array with Acoustically Transparent Omnidirectional
@@ -1551,7 +1374,7 @@
 
 							<!------------------------------------------------------------------------------------>
 							<tr>
-								<td width=256 align="center"> <img src="index_files/icmc-2009.jpg" width=230 height=170>
+								<td width=256 align="center"> <img alt="Stanford Laptop Orchestra (SLOrk)." src="index_files/icmc-2009.jpg" width=230 height=170>
 								</td>
 								<td>
 									<b>"Stanford Laptop Orchestra (SLOrk)."</b>
@@ -1579,7 +1402,7 @@
 
 
 					<br><br>
-					<hr size="2" align="left" noshade="">
+					<hr>
 
 
 
