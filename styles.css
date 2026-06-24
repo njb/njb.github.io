@@ -1,0 +1,368 @@
+/* ===== Design tokens ===== */
+:root {
+	--accent: #4f46e5;
+	--accent-dark: #3730a3;
+	--ink: #1f2430;
+	--muted: #5b6472;
+	--surface: #f5f6fb;
+	--accent-tint: #eef0fd; /* faint indigo wash for the featured callout */
+	--border: #e6e8ee;
+	--radius: 10px;
+	--pad-x: 24px;        /* horizontal padding inside boxed sections */
+	--inset: 28px;        /* matching text inset for flat sections (pad-x + 4px border) */
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+/* ===== Base ===== */
+body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+	margin: 0;
+	padding: 28px 18px;
+	line-height: 1.6;
+	font-size: 16.5px;
+	color: var(--ink);
+	background: #fff;
+	overflow-wrap: break-word;
+}
+
+img { max-width: 100%; height: auto; }
+
+/* Links */
+a {
+	color: var(--accent);
+	text-decoration: none;
+	transition: color .15s ease;
+}
+
+a:hover {
+	color: var(--accent-dark);
+	text-decoration: underline;
+}
+
+/* Self-reference links in author lists: highlight the site owner, not clickable */
+a[href="#"] {
+	color: var(--ink);
+	font-weight: 600;
+	pointer-events: none;
+	text-decoration: none;
+}
+
+/* ===== Layout ===== */
+.main-container {
+	max-width: 980px;
+	margin: 0 auto;
+	width: 100%;
+}
+
+/* ===== Header ===== */
+.header-section {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 28px;
+	align-items: flex-start;
+}
+
+.header-info {
+	flex: 1;
+	min-width: 280px;
+}
+
+.header-photo {
+	flex: 1;
+	min-width: 280px;
+	text-align: center;
+}
+
+.header-photo img {
+	max-width: 100%;
+	height: auto;
+	border-radius: var(--radius);
+}
+
+.name {
+	font-size: 2.6em;
+	font-weight: 800;
+	letter-spacing: -0.02em;
+	margin: 0 0 6px;
+	line-height: 1.1;
+	color: var(--ink);
+}
+
+.links-list {
+	list-style: none;
+	padding: 0;
+	margin: 14px 0 0;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px 18px;
+}
+
+.links-list li { margin: 0; }
+.links-list a { font-weight: 500; }
+
+/* ===== Section headers ===== */
+h2 {
+	font-size: 0.82rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	color: var(--accent);
+	border: none;
+	margin: 26px 0 16px;
+}
+
+/* ===== Dividers ===== */
+hr {
+	border: none;
+	border-top: 1px solid var(--border);
+	margin: 32px 0 0;
+}
+
+/* ===== Research vision ===== */
+.vision {
+	margin: 26px 0 8px;
+	padding: 18px var(--pad-x);
+	border-left: 4px solid var(--accent);
+	background: var(--accent-tint);
+	border-radius: 0 var(--radius) var(--radius) 0;
+}
+
+.vision-label {
+	font-size: 0.82rem;
+	font-weight: 700;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	color: var(--accent);
+	margin-bottom: 10px;
+}
+
+.vision-text {
+	margin: 0;
+	font-size: 1.15em;
+	line-height: 1.55;
+	color: var(--ink);
+}
+
+/* ===== About (flat body section) ===== */
+.about {
+	margin: 12px 0 8px;
+}
+
+/* Loose section paragraphs (e.g. About, Internships) share the unified text column */
+.about-text,
+.section-text {
+	margin: 0;
+	color: var(--ink);
+}
+
+/* ===== News ===== */
+.news { line-height: 2.2; }
+
+.news b {
+	display: inline-block;
+	font-weight: 600;
+	font-size: 0.74em;
+	letter-spacing: 0.02em;
+	color: var(--accent-dark);
+	background: var(--surface);
+	border: 1px solid var(--border);
+	border-radius: 999px;
+	padding: 2px 10px;
+	margin-right: 9px;
+	font-variant-numeric: tabular-nums;
+	white-space: nowrap;
+	vertical-align: middle;
+}
+
+/* ===== Publications (legacy table styled as cards) ===== */
+/* Use the separate border model (with zero spacing) so the table's own
+   padding is honored ù collapsed borders cause table padding to be ignored,
+   which would break the left/right inset shared with the other sections. */
+table {
+	width: 100%;
+	max-width: 100%;
+	border-collapse: separate;
+	border-spacing: 0;
+}
+
+td {
+	vertical-align: top;
+	padding: 22px 0;
+	border-bottom: 1px solid var(--border);
+}
+
+td[width="256"] {
+	width: 256px;
+	padding-right: 26px;
+}
+
+/* neutralize the stray empty wrapper cell at the top of the table */
+tr:first-child td {
+	padding: 0;
+	border: none;
+}
+
+tr:hover td { background: var(--surface); }
+
+td img,
+td iframe { border-radius: 8px; }
+
+table img { max-width: 100%; height: auto; }
+table iframe { max-width: 100%; }
+
+/* ===== Consistent section width ===== */
+/* Flat (non-boxed) sections get the same text inset as the boxed sections,
+   so every section's content shares one left/right edge. */
+h2,
+.news,
+.about-text,
+.section-text,
+table {
+	padding-left: var(--inset);
+	padding-right: var(--pad-x);
+}
+
+/* ===== Responsive iframes (videos) ===== */
+.video-container {
+	position: relative;
+	width: 100%;
+	max-width: 250px;
+	padding-bottom: 56.25%; /* 16:9 */
+	height: 0;
+	overflow: hidden;
+}
+
+.video-container iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+/* ===== Legacy flex publication classes (kept for compatibility) ===== */
+.pub-entry {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 15px;
+	margin-bottom: 25px;
+	padding-bottom: 15px;
+	border-bottom: 1px solid var(--border);
+}
+
+.pub-media {
+	flex: 0 0 250px;
+	max-width: 100%;
+}
+
+.pub-media img { max-width: 100%; height: auto; }
+
+.pub-details {
+	flex: 1;
+	min-width: 250px;
+}
+
+/* ===== Collapsible sections ===== */
+.collapsible {
+	background-color: #f0f0f3;
+	color: var(--ink);
+	cursor: pointer;
+	padding: 8px;
+	border: none;
+	text-align: left;
+	outline: none;
+	font-size: 15px;
+}
+
+.active,
+.collapsible:hover { background-color: #fff; }
+
+.content {
+	padding: 0 8px;
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 0.2s ease-out;
+	background-color: #fff;
+}
+
+/* ===== Mobile ===== */
+@media screen and (max-width: 768px) {
+	:root {
+		--pad-x: 16px;
+		--inset: 20px;
+	}
+
+	body {
+		padding: 16px 14px;
+		font-size: 16px;
+	}
+
+	.name { font-size: 2em; }
+
+	.vision-text { font-size: 1.06em; }
+
+	.header-section {
+		flex-direction: column-reverse;
+		align-items: stretch;
+		gap: 16px;
+	}
+
+	.header-photo {
+		text-align: center;
+		margin-bottom: 4px;
+	}
+
+	.header-photo img { max-width: 320px; }
+
+	.pub-entry { flex-direction: column; }
+
+	.pub-media {
+		flex: 0 0 auto;
+		text-align: center;
+	}
+
+	.video-container {
+		max-width: 100%;
+		margin: 0 auto;
+	}
+
+	/* stack legacy tables */
+	table, tbody, tr, td {
+		display: block;
+		width: 100% !important;
+	}
+
+	td {
+		padding: 6px 0;
+		border: none;
+	}
+
+	tr {
+		border-bottom: 1px solid var(--border);
+		padding: 16px 0;
+	}
+
+	tr:first-child { border: none; padding: 0; }
+	tr:hover td { background: transparent; }
+
+	td[width="256"] {
+		width: 100% !important;
+		text-align: center;
+		margin-bottom: 12px;
+		padding-right: 0;
+	}
+
+	td img {
+		max-width: 320px !important;
+		margin: 0 auto;
+	}
+
+	iframe { max-width: 100% !important; }
+}
+
+@media screen and (max-width: 480px) {
+	.name { font-size: 1.7em; }
+	.header-photo img { max-width: 100%; }
+	td img { max-width: 100% !important; }
+}
