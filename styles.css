@@ -40,12 +40,10 @@ a:hover {
 	text-decoration: underline;
 }
 
-/* Self-reference links in author lists: highlight the site owner, not clickable */
-a[href="#"] {
+/* Author lists: highlight the site owner */
+.me {
 	color: var(--ink);
 	font-weight: 600;
-	pointer-events: none;
-	text-decoration: none;
 }
 
 /* ===== Layout ===== */
@@ -175,41 +173,43 @@ hr {
 	vertical-align: middle;
 }
 
-/* ===== Publications (legacy table styled as cards) ===== */
-/* Use the separate border model (with zero spacing) so the table's own
-   padding is honored ù collapsed borders cause table padding to be ignored,
-   which would break the left/right inset shared with the other sections. */
-table {
-	width: 100%;
-	max-width: 100%;
-	border-collapse: separate;
-	border-spacing: 0;
-}
-
-td {
-	vertical-align: top;
+/* ===== Publications (semantic list) ===== */
+.pub-entry {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 26px;
+	margin: 0;
 	padding: 22px 0;
 	border-bottom: 1px solid var(--border);
 }
 
-td[width="256"] {
-	width: 256px;
-	padding-right: 26px;
+.pub-entry:hover { background: var(--surface); }
+
+.pub-media {
+	flex: 0 0 256px;
+	max-width: 100%;
 }
 
-/* neutralize the stray empty wrapper cell at the top of the table */
-tr:first-child td {
-	padding: 0;
-	border: none;
+.pub-details {
+	flex: 1;
+	min-width: 250px;
 }
 
-tr:hover td { background: var(--surface); }
+.pub-title {
+	font-size: 1em;
+	font-weight: 700;
+	color: var(--ink);
+	text-transform: none;
+	letter-spacing: normal;
+	margin: 0 0 4px;
+	line-height: 1.4;
+}
 
-td img,
-td iframe { border-radius: 8px; }
+.pub-media img,
+.pub-media iframe { border-radius: 8px; }
 
-table img { max-width: 100%; height: auto; }
-table iframe { max-width: 100%; }
+.pub-media img { max-width: 100%; height: auto; }
+.pub-media iframe { max-width: 100%; }
 
 /* ===== Consistent section width ===== */
 /* Flat (non-boxed) sections get the same text inset as the boxed sections,
@@ -218,72 +218,9 @@ h2,
 .news,
 .about-text,
 .section-text,
-table {
+.pub-list {
 	padding-left: var(--inset);
 	padding-right: var(--pad-x);
-}
-
-/* ===== Responsive iframes (videos) ===== */
-.video-container {
-	position: relative;
-	width: 100%;
-	max-width: 250px;
-	padding-bottom: 56.25%; /* 16:9 */
-	height: 0;
-	overflow: hidden;
-}
-
-.video-container iframe {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-}
-
-/* ===== Legacy flex publication classes (kept for compatibility) ===== */
-.pub-entry {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 15px;
-	margin-bottom: 25px;
-	padding-bottom: 15px;
-	border-bottom: 1px solid var(--border);
-}
-
-.pub-media {
-	flex: 0 0 250px;
-	max-width: 100%;
-}
-
-.pub-media img { max-width: 100%; height: auto; }
-
-.pub-details {
-	flex: 1;
-	min-width: 250px;
-}
-
-/* ===== Collapsible sections ===== */
-.collapsible {
-	background-color: #f0f0f3;
-	color: var(--ink);
-	cursor: pointer;
-	padding: 8px;
-	border: none;
-	text-align: left;
-	outline: none;
-	font-size: 15px;
-}
-
-.active,
-.collapsible:hover { background-color: #fff; }
-
-.content {
-	padding: 0 8px;
-	max-height: 0;
-	overflow: hidden;
-	transition: max-height 0.2s ease-out;
-	background-color: #fff;
 }
 
 /* ===== Mobile ===== */
@@ -315,45 +252,19 @@ table {
 
 	.header-photo img { max-width: 320px; }
 
-	.pub-entry { flex-direction: column; }
+	/* stack publication entries */
+	.pub-entry {
+		flex-direction: column;
+		gap: 12px;
+		padding: 16px 0;
+	}
 
 	.pub-media {
 		flex: 0 0 auto;
 		text-align: center;
 	}
 
-	.video-container {
-		max-width: 100%;
-		margin: 0 auto;
-	}
-
-	/* stack legacy tables */
-	table, tbody, tr, td {
-		display: block;
-		width: 100% !important;
-	}
-
-	td {
-		padding: 6px 0;
-		border: none;
-	}
-
-	tr {
-		border-bottom: 1px solid var(--border);
-		padding: 16px 0;
-	}
-
-	tr:first-child { border: none; padding: 0; }
-	tr:hover td { background: transparent; }
-
-	td[width="256"] {
-		width: 100% !important;
-		text-align: center;
-		margin-bottom: 12px;
-		padding-right: 0;
-	}
-
-	td img {
+	.pub-media img {
 		max-width: 320px !important;
 		margin: 0 auto;
 	}
@@ -364,5 +275,36 @@ table {
 @media screen and (max-width: 480px) {
 	.name { font-size: 1.7em; }
 	.header-photo img { max-width: 100%; }
-	td img { max-width: 100% !important; }
+	.pub-media img { max-width: 100% !important; }
+}
+
+/* ===== Subpages (breadcrumb, quotes, link rows) ===== */
+.crumb {
+	margin: 0 0 18px;
+	font-size: 0.9em;
+	padding-left: var(--inset);
+}
+
+.feature-list {
+	margin: 0;
+	padding-left: calc(var(--inset) + 20px);
+	padding-right: var(--pad-x);
+}
+
+.feature-list li { margin-bottom: 8px; }
+
+.pillars {
+	margin: 12px 0 0;
+	padding-left: 20px;
+	font-size: 1.02em;
+	line-height: 1.5;
+}
+
+.pillars li { margin-bottom: 9px; }
+.pillars li:last-child { margin-bottom: 0; }
+
+.vision-foot {
+	margin-top: 14px;
+	font-size: 0.95em;
+	color: var(--muted);
 }
